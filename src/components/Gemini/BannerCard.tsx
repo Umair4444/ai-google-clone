@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 interface BannerCardProps {
@@ -22,53 +23,70 @@ const BannerCard: React.FC<BannerCardProps> = ({
   disableHover,
 }) => {
   return (
-    <div className="relative h-[500px] rounded-[40px] overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer group">
+    <div
+      className="relative rounded-[30px] overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer group
+                 h-[400px] sm:h-[450px] md:h-[400px] lg:h-[550px]"
+    >
       {/* Card image */}
-      <img src={image} alt={title} className="w-full h-full object-cover" />
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
 
       {/* Dark overlay on hover */}
       <div
         className={`absolute inset-0 bg-black/0 ${
           !disableHover ? "group-hover:bg-black/40" : ""
-        } transition-colors duration-300 z-10 rounded-[40px]`}
+        } transition-colors duration-300 z-10`}
       />
 
-      {/* Clickable overlay */}
+      {/* Card content */}
+      <div className="absolute inset-0 z-20 p-6 sm:p-8 md:p-10 flex flex-col justify-between text-white">
+        {/* Top: title + description */}
+        <div>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/90 leading-tight">
+            {title}
+          </h3>
+          <p className="mt-2 text-sm sm:text-base md:text-lg text-white/80 leading-snug">
+            {description}
+          </p>
+        </div>
+
+        {/* Bottom: button (always visible) */}
+        <div>
+          {modalId ? (
+            <button
+              onClick={onClick}
+              className="mb-2 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-white/20 hover:bg-white/50 rounded-full text-black/90 font-medium transition-colors duration-200 flex items-center gap-2 z-30 relative"
+            >
+              Learn more <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+          ) : (
+            <a
+              href={link}
+              className="mb-2 sm:mb-4 inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-white/20 hover:bg-white/50 rounded-full text-black/90 font-medium transition-colors duration-200 z-30 relative"
+            >
+              Learn more <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </a>
+          )}
+        </div>
+      </div>
+
+      {/* Clickable overlay (covers entire card for accessibility) */}
       {modalId ? (
         <button
-          className="absolute inset-0 z-20 cursor-pointer"
+          className="absolute inset-0 z-0 cursor-pointer"
           onClick={onClick}
           aria-label={`Open modal: ${title}`}
         />
       ) : (
         <a
           href={link}
-          className="absolute inset-0 z-20 cursor-pointer"
+          className="absolute inset-0 z-0 cursor-pointer"
           aria-label={title}
         />
       )}
-
-      {/* Card content */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 z-30 text-white">
-        <h3 className="text-2xl font-semibold">{title}</h3>
-        <p className="text-md mt-2">{description}</p>
-
-        {modalId ? (
-          <button
-            className="mt-4 text-blue-400 font-medium cursor-pointer hover:underline"
-            onClick={onClick}
-          >
-            Learn more →
-          </button>
-        ) : (
-          <a
-            href={link}
-            className="mt-4 text-blue-400 font-medium inline-block cursor-pointer hover:underline"
-          >
-            Learn more →
-          </a>
-        )}
-      </div>
     </div>
   );
 };

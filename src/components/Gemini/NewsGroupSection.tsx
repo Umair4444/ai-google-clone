@@ -42,7 +42,7 @@ type NewsItem = (typeof newsItems)[number];
 
 function NewsCard({ title, date, link, label, image, alt = "" }: NewsItem) {
   return (
-    <article className="group relative overflow-hidden rounded-4xl transition-all hover:bg-gray-50 hover:-translate-y-1">
+    <article className="group relative overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-300 hover:bg-gray-50 hover:-translate-y-1">
       {/* Full clickable overlay */}
       <a
         href={link}
@@ -52,16 +52,16 @@ function NewsCard({ title, date, link, label, image, alt = "" }: NewsItem) {
         className="absolute inset-0 z-10"
       />
 
-      <div className="relative z-20 flex items-start gap-4 p-5">
+      <div className="relative z-20 flex items-start gap-3 sm:gap-4 md:gap-6 p-3 sm:p-5 md:p-6">
         {/* LEFT SIDE */}
-        <div className="flex flex-col justify-between flex-1 min-h-[90px]">
+        <div className="flex flex-col justify-between flex-1 min-h-[80px] sm:min-h-[100px]">
           {/* Title */}
-          <h3 className="text-3xl font-medium text-gray-900 line-clamp-3">
+          <h3 className="text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-900 leading-tight line-clamp-3">
             {title}
           </h3>
 
           {/* Date + Label Row */}
-          <div className="flex items-center gap-4 text-sm text-gray-600 mt-2">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm text-gray-600 mt-2 sm:mt-3">
             <time dateTime={date}>{date}</time>
 
             <span className="flex items-center gap-1 font-medium text-blue-600 transition-colors group-hover:text-blue-700">
@@ -73,7 +73,17 @@ function NewsCard({ title, date, link, label, image, alt = "" }: NewsItem) {
 
         {/* RIGHT SIDE IMAGE */}
         {image && (
-          <div className="w-44 h-44 overflow-hidden rounded-2xl">
+          <div
+            className="
+            flex-shrink-0
+            w-20 h-20
+            sm:w-24 sm:h-24
+            md:w-28 md:h-28
+            lg:w-32 lg:h-32
+            xl:w-36 xl:h-36
+            overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl
+          "
+          >
             <img
               src={image}
               alt={alt}
@@ -89,9 +99,12 @@ function NewsCard({ title, date, link, label, image, alt = "" }: NewsItem) {
 
 export default function NewsGroupSection() {
   return (
-    <div className="mx-auto px-4 py-12 sm:px-6 lg:px-20">
-      <h1 className="text-5xl mb-6">Latest News</h1>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-8">
+    <div className="mx-auto px-4 sm:px-6 lg:px-16 xl:px-20 py-8 sm:py-10 lg:py-12">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 sm:mb-8">
+        Latest News
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         {newsItems.map((item, index) => (
           <NewsCard key={index} {...item} />
         ))}

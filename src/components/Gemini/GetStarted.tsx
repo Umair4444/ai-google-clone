@@ -17,7 +17,8 @@ const PromoCard: React.FC<PromoCardProps> = ({
   isVideo = false,
 }) => {
   return (
-    <div className="group relative overflow-hidden rounded-[30px] shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+    <div className="group relative overflow-hidden rounded-[40px] shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+      {/* Full-card link for accessibility */}
       <a
         href={link}
         target="_blank"
@@ -26,32 +27,35 @@ const PromoCard: React.FC<PromoCardProps> = ({
         aria-label={title}
       />
 
-      <div className="relative h-[500px] w-[400px]">
+      <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[24rem] xl:h-[30rem] flex flex-col justify-between">
+        {/* Background image */}
         <img
           src={imageSrc}
-          alt=""
-          className="h-full w-full object-cover"
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
 
-        {/* Scrim / dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/25 transition duration-500 group-hover:bg-black/60" />
 
-        {/* Content positioned at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h3 className="mb-4 text-xl font-semibold leading-tight md:text-2xl">
+        {/* Content */}
+        <div className="relative z-20 flex flex-col justify-between h-full p-8 sm:p-6 md:p-8 text-white">
+          {/* Title */}
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-snug md:leading-tight lg:leading-tight">
             {title}
           </h3>
 
+          {/* Link/button */}
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white/20 px-5 py-2.5 text-sm font-medium backdrop-blur-sm transition hover:bg-white/30"
+            className="mt-4 sm:mt-6 w-fit inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 sm:px-5 sm:py-3 text-sm sm:text-base md:text-lg font-medium backdrop-blur-sm transition hover:bg-white/30"
           >
             <span>{linkText}</span>
             <svg
-              className="h-5 w-5"
+              className="h-4 w-4 sm:h-5 sm:w-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -118,12 +122,12 @@ const GetStarted = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 py-20 sm:px-6 lg:px-20">
-      <h2 className="mb-36 text-center text-4xl font-medium text-gray-900 dark:text-white md:text-7xl">
-        Get started with Google AI
+    <div className="mx-auto py-6 sm:py-10 xl:py-20 ">
+      <h2 className="mb-6 sm:mb-10 lg:mb-28 xl:mb-32 text-center text-5xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white ">
+        Everything We Do{" "}
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4 container">
         {cards.map((card, index) => {
           // Add staggered offset for middle cards on lg
           const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : ""; // middle card of each row
