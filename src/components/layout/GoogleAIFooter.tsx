@@ -246,7 +246,7 @@ const GoogleAIFooter: React.FC = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-[#dadce0] py-4 flex flex-col lg:flex-row items-center justify-start gap-60 text-base">
+        <div className="border-t border-[#dadce0] py-4 flex flex-col lg:flex-row items-center justify-start gap-4 lg:gap-60 text-base">
           <a
             href="https://www.google.com/?utm_source=ai.google&utm_medium=referral"
             target="_blank"
