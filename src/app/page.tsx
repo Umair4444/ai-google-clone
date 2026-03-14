@@ -1,5 +1,5 @@
 import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import Footer from "@/components/layout/Footer";
+import GoogleAIFooter from "@/components/layout/GoogleAIFooter";
 import Navbar from "@/components/layout/Navbar";
 import MarqueeCarousel from "@/components/Gemini/MarqueeCarousel";
 import GetStarted from "@/components/Gemini/GetStarted";
@@ -21,7 +21,7 @@ const HomePage = () => {
 
       <NewsGroupSection />
 
-      <Footer />
+      <GoogleAIFooter />
     </main>
   );
 };
