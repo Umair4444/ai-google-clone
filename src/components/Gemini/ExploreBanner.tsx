@@ -6,7 +6,7 @@ import ModalCard from "@/components/Gemini/ModalCard";
 
 interface BannerCardType {
   title: string;
-  description: string;
+  description?: string;
   image: string;
   modalId?: string;
   link?: string;
@@ -216,46 +216,46 @@ const ExploreBanner: React.FC = () => {
 
   const bannerCards: BannerCardType[] = [
     {
-      title: "For creativity",
-      description: "Unleash your imagination with AI-powered creation tools",
+      title: "Workflow Automation",
+      // description: "Unleash your imagination with AI-powered creation tools",
       image:
-        "https://images.unsplash.com/photo-1557683316-973673baf926?w=1200&q=80",
+        "https://images.unsplash.com/photo-1758543102367-da8b00ddf4da?w=600&auto=format&fit=crop&q=60",
       modalId: "modal-1",
     },
     {
-      title: "For knowledge",
-      description: "Explore, learn, and understand complex topics faster",
+      title: "Marketing Generalist",
+      // description: "Explore, learn, and understand complex topics faster",
       image:
         "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&q=80",
       modalId: "modal-2",
     },
     {
-      title: "For productivity",
-      description:
-        "Get more done with intelligent assistance across your workflow",
+      title: "Specialised Services",
+      // description:
+      //   "Get more done with intelligent assistance across your workflow",
       image:
         "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80",
       modalId: "modal-3",
     },
     {
-      title: "For students",
-      description: "Study smarter with personalized learning support",
+      title: "Digital Solutions",
+      // description: "Study smarter with personalized learning support",
       image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80",
+        "https://plus.unsplash.com/premium_photo-1674582743901-7e438e0e5ea0?w=600&auto=format&fit=crop&q=60",
       modalId: "modal-4",
     },
     {
-      title: "For experimenting",
-      description: "Play, test, and discover new AI capabilities",
+      title: "AI Streamer/Influencer",
+      // description: "Play, test, and discover new AI capabilities",
       image:
         "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
       modalId: "modal-5",
     },
     {
-      title: "Explore all products",
-      description: "Discover the complete Gemini ecosystem",
+      title: "AI Chatbots",
+      // description: "Discover the complete Gemini ecosystem",
       image:
-        "https://images.unsplash.com/photo-1555949963-aa79d0ebc8fb?w=1200&q=80",
+        "https://images.unsplash.com/photo-1757310998309-87a97e562ee5?w=600&auto=format&fit=crop&q=60",
       link: "/products/",
     },
   ];

@@ -77,28 +77,28 @@ const PromoCard: React.FC<PromoCardProps> = ({
 const GetStarted = () => {
   const cards = [
     {
-      title: "Ask anything, any way, in Google Search",
+      title: "Automation and Everything AI",
       imageSrc:
         "https://lh3.googleusercontent.com/EFrMyEOVYZNY54w6N8z1yDIlsy3ZhAdcwD5kL1XJzDWuHWiX2MqrOl3MfaU0-gM7R7xm70Dz7g0TWq9LH5z28srk0pGgnpaoy2J_70EkJW-7koagilA=w1440",
       link: "https://google.ai/",
       linkText: "Try AI Mode",
     },
     {
-      title: "Chat with Gemini, your personal AI assistant",
+      title: "The next big thing?",
       imageSrc:
         "https://lh3.googleusercontent.com/rGMC4neLuPUs5WpLdPluoiQzWXbs-Wdg12ITHLKsVBIZIfFaLKOvcLmBmkjL5WEXfjWu-7-3WCVTJ9pmNj8RXTEv0iFttJ2cTwsrrb03-ldbmbSfWA=w1440",
       link: "https://gemini.google.com/?utm_source=ai.google&utm_medium=referral",
       linkText: "Try Gemini",
     },
     {
-      title: "Create and edit images with Nano Banana",
+      title: "Business-ready workflows",
       imageSrc:
         "https://lh3.googleusercontent.com/r8r2n2_nuLGW3WJdwd9AalvGW0sxzuppKVq1v3S8GLHwWTZMLHzFZCaSAYEzgjXlfXr3AZ9okFaelmHSk1l_nri95DE2p_xWSB99ebscqq97DHzpJg=w1440",
       link: "https://gemini.google.com/?utm_source=ai.google&utm_medium=referral&target=image",
       linkText: "Try in Gemini",
     },
     {
-      title: "Seamlessly create cinematic clips, scenes and stories",
+      title: "Specialised Services & All-in-One Expert",
       imageSrc:
         "https://lh3.googleusercontent.com/PeyM_HzMdIe0V7oG4e-fdkHODYu7xTwK7p52s8Rqa99-2z4frH2ExrurgzhPAWGtySqs_T_WUKeubHzaMss_wxkE_uK7h6lCQKCy30KIEpZV2w5qnw=w1440", // fallback poster used
       link: "https://labs.google/flow?utm_source=ai.google&utm_medium=referral",
@@ -106,14 +106,14 @@ const GetStarted = () => {
       // Note: original had video → you can replace img with <video autoPlay loop muted playsInline />
     },
     {
-      title: "Understand anything with your research and thinking partner",
+      title: "A new form of entertainment...",
       imageSrc:
         "https://lh3.googleusercontent.com/bZheMXm2Omqt3i2t469gvHyOoMWq2Y1WblGnOorJ8Zl-0YR1iYdYppNzFOmcXI5R-iLX0PkCxfjpyrsRUKLqiyLQlMQ04LrCKiXYgCbUNm-6-PLu=w1440",
       link: "https://notebooklm.google.com/?utm_source=ai.google&utm_medium=referral",
       linkText: "Try NotebookLM",
     },
     {
-      title: "Turn your photos into videos using Veo 3",
+      title: "Something industry-breaking...",
       imageSrc:
         "https://lh3.googleusercontent.com/PeyM_HzMdIe0V7oG4e-fdkHODYu7xTwK7p52s8Rqa99-2z4frH2ExrurgzhPAWGtySqs_T_WUKeubHzaMss_wxkE_uK7h6lCQKCy30KIEpZV2w5qnw=w1440",
       link: "https://gemini.google.com/veo?utm_source=ai.google&utm_medium=referral",

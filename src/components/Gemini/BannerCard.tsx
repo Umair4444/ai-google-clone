@@ -5,7 +5,7 @@ import React from "react";
 
 interface BannerCardProps {
   title: string;
-  description: string;
+  description?: string;
   image: string;
   modalId?: string;
   link?: string;
@@ -49,9 +49,11 @@ const BannerCard: React.FC<BannerCardProps> = ({
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/90 leading-tight">
             {title}
           </h3>
-          <p className="mt-2 text-sm sm:text-base md:text-lg text-white/80 leading-snug">
-            {description}
-          </p>
+          {description && (
+            <p className="mt-2 text-sm sm:text-base md:text-lg text-white/80 leading-snug">
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Bottom: button (always visible) */}
