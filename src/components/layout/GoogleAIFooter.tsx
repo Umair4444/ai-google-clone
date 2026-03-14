@@ -35,10 +35,10 @@ const GoogleAIFooter: React.FC = () => {
 
             {/* Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 flex-1">
-              {/* Products */}
+              {/* Workplace */}
               <div>
                 <div className="mb-4">
-                  <div className="text-xl font-semibold">Products</div>
+                  <div className="text-xl font-semibold">Workplace</div>
                   <div className="mt-2 text-base text-[#5f6368] leading-relaxed">
                     Discover how AI can be helpful, from work to everyday life
                   </div>
@@ -97,10 +97,10 @@ const GoogleAIFooter: React.FC = () => {
                 </a>
               </div>
 
-              {/* Build */}
+              {/* Studio */}
               <div>
                 <div className="mb-4">
-                  <div className="text-xl font-semibold">Build</div>
+                  <div className="text-xl font-semibold">Studio</div>
                   <div className="mt-2 text-base text-[#5f6368] leading-relaxed">
                     Get started building with cutting-edge AI models and tools
                   </div>
@@ -143,10 +143,10 @@ const GoogleAIFooter: React.FC = () => {
                 </a>
               </div>
 
-              {/* Research */}
+              {/* Lab */}
               <div>
                 <div className="mb-4">
-                  <div className="text-xl font-semibold">Research</div>
+                  <div className="text-xl font-semibold">Lab</div>
                   <div className="mt-2 text-base text-[#5f6368] leading-relaxed">
                     Tackling the most challenging problems in computer science
                   </div>
@@ -174,10 +174,10 @@ const GoogleAIFooter: React.FC = () => {
                 </a>
               </div>
 
-              {/* Responsibility */}
+              {/* Industry News */}
               <div>
                 <div className="mb-4">
-                  <div className="text-xl font-semibold">Responsibility</div>
+                  <div className="text-xl font-semibold">Industry News</div>
                   <div className="mt-2 text-base text-[#5f6368] leading-relaxed">
                     We’re building and deploying AI responsibly
                   </div>
@@ -296,16 +296,6 @@ const GoogleAIFooter: React.FC = () => {
             >
               Terms
             </a>
-
-            <button
-              type="button"
-              className="hover:underline cursor-pointer"
-              onClick={() =>
-                alert("Cookies management controls would open here")
-              }
-            >
-              Cookies management controls
-            </button>
           </div>
         </div>
       </div>
