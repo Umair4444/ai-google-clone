@@ -139,22 +139,14 @@ export default function MarqueeCarousel() {
   const renderCard = (item: Slider, index: number) => (
     <div
       key={`${item.title}-${index}`}
-      className={`flex-shrink-0 w-80 h-[180px] rounded-2xl overflow-hidden
-      shadow-xl transition-transform duration-300 hover:scale-[1.04]
-      bg-gradient-to-br ${colorClasses[item.color] || "from-gray-400 to-gray-500"} text-white relative`}
+      className={`group flex-shrink-0 w-80 h-[180px] rounded-2xl overflow-hidden
+    shadow-xl transition-transform duration-300 hover:scale-[1.04]
+    bg-gradient-to-br ${colorClasses[item.color] || "from-gray-400 to-gray-500"} 
+    text-white relative`}
     >
-      {item.badge && (
-        <span className="absolute top-3 left-3 z-10 px-3 py-1 text-xs font-bold bg-black/70 rounded-full">
-          {item.badge}
-        </span>
-      )}
-      {item.icon && (
-        <div className="absolute top-3 left-3 z-10 text-2xl opacity-80">
-          {item.icon}
-        </div>
-      )}
+      {/* Background image */}
       {item.image && (
-        <div className="relative h-full w-full">
+        <div className="absolute inset-0">
           <Image
             src={item.image}
             alt={item.title}
@@ -164,6 +156,33 @@ export default function MarqueeCarousel() {
           />
         </div>
       )}
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 p-4 flex flex-col justify-start items-start">
+        {/* Icon / Badge */}
+        {(item.icon || item.badge) && (
+          <div className="mb-1 transition-all duration-300 transform group-hover:-translate-y-6 group-hover:opacity-0">
+            {item.badge && (
+              <span className="px-3 py-1 text-xs font-bold bg-orange-400 text-white rounded-full">
+                {item.badge}
+              </span>
+            )}
+            {item.icon && <div className="text-lg">{item.icon}</div>}
+          </div>
+        )}
+
+        {/* Title */}
+        <h3 className="text-xl font-semibold transition-transform duration-300 transform group-hover:-translate-y-3">
+          {item.title}
+        </h3>
+
+        {/* Text */}
+        {item.text && (
+          <p className="text-base opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+            {item.text}
+          </p>
+        )}
+      </div>
     </div>
   );
 
