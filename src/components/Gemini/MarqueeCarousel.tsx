@@ -60,6 +60,7 @@ const sliderTwo: Slider[] = [
     title: "Mountain Sunset",
     text: "",
     color: "blue",
+    badge: "NEW",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop",
   },
@@ -67,6 +68,7 @@ const sliderTwo: Slider[] = [
     title: "City Night Lights",
     text: "",
     color: "green",
+    badge: "NEW",
     image:
       "https://plus.unsplash.com/premium_photo-1661908853318-893732a14e42?w=600&auto=format&fit=crop",
   },
@@ -74,6 +76,7 @@ const sliderTwo: Slider[] = [
     title: "Ocean Waves",
     text: "",
     color: "red",
+    badge: "NEW",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop",
   },
@@ -81,6 +84,7 @@ const sliderTwo: Slider[] = [
     title: "Forest Path",
     text: "",
     color: "yellow",
+    badge: "NEW",
     image:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop",
   },
@@ -145,7 +149,7 @@ export default function MarqueeCarousel() {
         </span>
       )}
       {item.icon && (
-        <div className="absolute top-4 right-4 z-10 text-3xl opacity-80">
+        <div className="absolute top-3 left-3 z-10 text-2xl opacity-80">
           {item.icon}
         </div>
       )}
