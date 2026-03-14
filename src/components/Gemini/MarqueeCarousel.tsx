@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-type Prompt = {
+type Slider = {
   title: string;
   text: string;
   color: "yellow" | "red" | "green" | "blue";
@@ -12,7 +12,7 @@ type Prompt = {
   image?: string;
 };
 
-const prompts: Prompt[] = [
+const sliderOne: Slider[] = [
   {
     title: "Create custom soundtracks",
     text: "Create a comical R&B slow jam about a sock finding their match.",
@@ -27,7 +27,7 @@ const prompts: Prompt[] = [
     color: "red",
     icon: "🎥",
     image:
-      "https://images.unsplash.com/photo-1540979388789-7cee28a1cdc9?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1603011238116-6c336f27bacc?w=600&auto=format&fit=crop",
   },
   {
     title: "Visualize photos as figurines",
@@ -51,11 +51,11 @@ const prompts: Prompt[] = [
     color: "yellow",
     icon: "🎨",
     image:
-      "https://images.unsplash.com/photo-1547891654-e66ed7eb9687?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1771167219256-5c4867b9616a?w=600&auto=format&fit=crop",
   },
 ];
 
-const moreImages: Prompt[] = [
+const sliderTwo: Slider[] = [
   {
     title: "Mountain Sunset",
     text: "",
@@ -68,7 +68,7 @@ const moreImages: Prompt[] = [
     text: "",
     color: "green",
     image:
-      "https://images.unsplash.com/photo-1493244040629-496f6d136cc3?w=800&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1661908853318-893732a14e42?w=600&auto=format&fit=crop",
   },
   {
     title: "Ocean Waves",
@@ -94,8 +94,8 @@ export default function MarqueeCarousel() {
   const [isPaused, setIsPaused] = useState(false); // manual pause/play
   const [isHovering, setIsHovering] = useState(false); // hover pause
 
-  const items1 = [...prompts, ...prompts];
-  const items2 = [...moreImages, ...moreImages];
+  const items1 = [...sliderOne, ...sliderOne];
+  const items2 = [...sliderTwo, ...sliderTwo];
 
   const colorClasses: Record<string, string> = {
     yellow: "from-yellow-400 to-amber-500",
@@ -132,7 +132,7 @@ export default function MarqueeCarousel() {
     return () => cancelAnimationFrame(frameId);
   }, [isPaused, isHovering]);
 
-  const renderCard = (item: Prompt, index: number) => (
+  const renderCard = (item: Slider, index: number) => (
     <div
       key={`${item.title}-${index}`}
       className={`flex-shrink-0 w-80 h-[180px] rounded-2xl overflow-hidden
