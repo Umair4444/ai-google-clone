@@ -5,6 +5,7 @@ import MarqueeCarousel from "@/components/Gemini/MarqueeCarousel";
 import GetStarted from "@/components/Gemini/GetStarted";
 import ExploreBanner from "@/components/Gemini/ExploreBanner";
 import NewsGroupSection from "@/components/Gemini/NewsGroupSection";
+import SolutionGenerator from "@/components/Gemini/SolutionGenerator";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,8 @@ const HomePage = () => {
       <Navbar />
 
       <GeminiHeader />
+
+      <SolutionGenerator />
 
       <MarqueeCarousel />
 
