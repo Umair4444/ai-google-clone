@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft, Download, Share2, Copy, Check, X } from "lucide-react";
+import LoadingAnimation from "@/components/Gemini/LoadingAnimation";
 
 interface SolutionData {
   title: string;
@@ -182,7 +183,7 @@ const SolutionResultsContent = () => {
 
         {/* Full-screen Modal */}
         {isOpen && data.image && (
-          <div 
+          <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
@@ -210,7 +211,7 @@ const SolutionResultsContent = () => {
 
 const SolutionResultsPage = () => {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+    <Suspense fallback={<LoadingAnimation />}>
       <SolutionResultsContent />
     </Suspense>
   );
