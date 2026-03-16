@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Shuffle, Sparkles } from "lucide-react";
+import { useRouter } from "next/navigation";
+import LoadingAnimation from "./LoadingAnimation";
 
 const prompts = [
   "Build a chatbot",
@@ -22,6 +24,52 @@ const categories = [
 const SolutionGenerator = () => {
   const [input, setInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("AI & ML");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const handleGenerateSolution = async () => {
+    if (!input.trim()) return;
+
+    setIsLoading(true);
+
+    // Simulate API call delay (replace with actual API call)
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Prepare solution data (replace with actual API response)
+    const solutionData = {
+      title: `${input} Solution`,
+      description: `A comprehensive solution for ${input.toLowerCase()} leveraging Google Cloud's AI and machine learning capabilities to deliver scalable and efficient results.`,
+      steps: [
+        "Analyze requirements and define success metrics",
+        "Set up cloud infrastructure and APIs",
+        "Design system architecture",
+        "Implement core functionality",
+        "Test and validate performance",
+        "Deploy to production",
+        "Monitor and optimize",
+      ],
+      technologies: ["Vertex AI", "Cloud Run", "BigQuery", "TensorFlow", "Node.js"],
+      image: "/flow-chart.png",
+    };
+
+    setIsLoading(false);
+
+    // Navigate to results page with data
+    router.push(`/solution-results?data=${encodeURIComponent(JSON.stringify(solutionData))}`);
+  };
+
+  const handleSurpriseMe = () => {
+    const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+    setInput(randomPrompt);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="w-full max-w-7xl mx-auto p-4">
+        <LoadingAnimation message="Generating your solution..." />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 space-y-6">
@@ -37,12 +85,19 @@ const SolutionGenerator = () => {
 
         {/* ACTION BUTTONS */}
         <div className="flex items-center justify-between mt-4">
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg border hover:bg-gray-100">
+          <button
+            onClick={handleSurpriseMe}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg border hover:bg-gray-100 transition"
+          >
             <Shuffle size={16} />
             Surprise me
           </button>
 
-          <button className="px-5 py-2 rounded-lg bg-black text-white hover:bg-gray-800">
+          <button
+            onClick={handleGenerateSolution}
+            disabled={!input.trim()}
+            className="px-5 py-2 rounded-lg bg-black text-white hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          >
             Generate solution
           </button>
         </div>
