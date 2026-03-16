@@ -31,7 +31,7 @@ const BannerCard: React.FC<BannerCardProps> = ({
       <img
         src={image}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        className="w-full h-full object-center transition-transform duration-300 group-hover:scale-105"
       />
 
       {/* Persistent dark overlay */}
@@ -61,14 +61,14 @@ const BannerCard: React.FC<BannerCardProps> = ({
           {modalId ? (
             <button
               onClick={onClick}
-              className="mb-2 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-black/30 hover:bg-black/50 rounded-full text-white font-medium transition-colors duration-200 flex items-center gap-2 z-30 relative"
+              className="mb-2 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-white/30 hover:bg-white/50 rounded-full text-white font-medium transition-colors duration-200 flex items-center gap-2 z-30 relative"
             >
               Learn more <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           ) : (
             <a
               href={link}
-              className="mb-2 sm:mb-4 inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-black/30 hover:bg-black/50 rounded-full text-white/90 font-medium transition-colors duration-200 z-30 relative"
+              className="mb-2 sm:mb-4 inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg bg-white/30 hover:bg-white/50 rounded-full text-white/90 font-medium transition-colors duration-200 z-30 relative"
             >
               Learn more <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>

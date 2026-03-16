@@ -218,44 +218,38 @@ const ExploreBanner: React.FC = () => {
     {
       title: "Workflow Automation",
       // description: "Unleash your imagination with AI-powered creation tools",
-      image:
-        "https://images.unsplash.com/photo-1758543102367-da8b00ddf4da?w=600&auto=format&fit=crop&q=60",
+      image: "/explore-whats-possible/workflow-and-automation.webp",
       modalId: "modal-1",
     },
     {
       title: "Marketing Generalist",
       // description: "Explore, learn, and understand complex topics faster",
-      image:
-        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&q=80",
+      image: "/explore-whats-possible/marketing-generalist-new.webp",
       modalId: "modal-2",
     },
     {
       title: "Specialised Services",
       // description:
       //   "Get more done with intelligent assistance across your workflow",
-      image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80",
+      image: "/explore-whats-possible/specialised-services-new.webp",
       modalId: "modal-3",
     },
     {
       title: "Digital Solutions",
       // description: "Study smarter with personalized learning support",
-      image:
-        "https://plus.unsplash.com/premium_photo-1674582743901-7e438e0e5ea0?w=600&auto=format&fit=crop&q=60",
+      image: "/explore-whats-possible/digital-solutions-new.webp",
       modalId: "modal-4",
     },
     {
       title: "AI Streamer/Influencer",
       // description: "Play, test, and discover new AI capabilities",
-      image:
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80",
+      image: "/explore-whats-possible/ai-avatar-new.webp",
       modalId: "modal-5",
     },
     {
       title: "AI Chatbots",
       // description: "Discover the complete Gemini ecosystem",
-      image:
-        "https://images.unsplash.com/photo-1757310998309-87a97e562ee5?w=600&auto=format&fit=crop&q=60",
+      image: "/explore-whats-possible/ai-chatbot-new.webp",
       link: "/products/",
     },
   ];
