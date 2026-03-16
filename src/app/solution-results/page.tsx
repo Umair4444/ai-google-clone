@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft, Download, Share2, Copy, Check, X } from "lucide-react";
@@ -13,7 +13,7 @@ interface SolutionData {
   image?: string;
 }
 
-const SolutionResultsPage = () => {
+const SolutionResultsContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [copied, setCopied] = useState(false);
@@ -205,6 +205,14 @@ const SolutionResultsPage = () => {
         )}
       </div>
     </main>
+  );
+};
+
+const SolutionResultsPage = () => {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>}>
+      <SolutionResultsContent />
+    </Suspense>
   );
 };
 
