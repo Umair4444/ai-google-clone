@@ -60,30 +60,25 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/80 border-b">
-      <div className="relative flex items-center justify-between h-16 px-6 lg:px-20 mx-auto">
+      <div className="flex items-center justify-between h-16 px-6 lg:px-20 mx-auto">
         {/* ================= Logo (LEFT) ================= */}
         <Link
           href="/"
-          className="group flex items-center gap-2 text-lg font-semibold"
+          className="group flex items-center gap-2 text-lg font-semibold flex-shrink-0"
         >
-          <div className="relative">
-            <Image
-              src="/logo/Bhobbi-logo.png"
-              alt="Bhobbi"
-              width={80}
-              height={80}
-              className="w-20 sm:w-24 lg:w-28 object-contain transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-1"
-            />
-
-            {/* Glow effect */}
-            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition duration-500 blur-xl bg-white/20"></div>
-          </div>
+          <Image
+            src="/logo/Bhobbi-logo.png"
+            alt="Bhobbi"
+            width={80}
+            height={80}
+            className="w-20 sm:w-24 lg:w-28 object-contain transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-1"
+          />
         </Link>
 
         {/* ================= CENTER NAVBAR ================= */}
-        <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+        <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
           {navItems.map((item) => (
-            <div key={item.label} className="relative group">
+            <div key={item.label} className="group relative">
               <Link
                 href={item.href}
                 className="px-4 py-2 text-base lg:text-lg font-medium rounded-lg hover:bg-gray-100 transition"
@@ -92,7 +87,7 @@ export default function Navbar() {
               </Link>
 
               {/* Dropdown */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-12 w-[300px] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[300px] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                 <div className="bg-white border rounded-xl shadow-xl p-3 space-y-1">
                   {item.dropdown.map((drop) => (
                     <Link
@@ -111,6 +106,9 @@ export default function Navbar() {
             </div>
           ))}
         </div>
+
+        {/* ================= Spacer for balance (RIGHT) ================= */}
+        <div className="hidden md:block flex-shrink-0 w-28"></div>
 
         {/* ================= MOBILE BUTTON (RIGHT) ================= */}
         <button
