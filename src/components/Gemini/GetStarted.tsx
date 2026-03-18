@@ -184,7 +184,7 @@ const GetStarted = () => {
   return (
     <div className="flex flex-col items-center justify-between py-6 sm:py-10 xl:py-20">
       <h2 className="mb-6 sm:mb-10 lg:mb-28 xl:mb-32 text-center text-5xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white ">
-        Everything We Do{" "}
+        Everything We Do
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4 container">

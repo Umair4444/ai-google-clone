@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const navItems = [
   {
@@ -51,55 +52,36 @@ const navItems = [
   },
 ];
 
-const featuredItems = [
-  { title: "Gemini", description: "Learn more about our AI", href: "#" },
-  { title: "AI Studio", description: "Build AI apps", href: "#" },
-  { title: "Gemma", description: "Open AI models", href: "#" },
-  { title: "Vertex AI", description: "Enterprise AI platform", href: "#" },
-];
-
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<
     string | null
   >(null);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/80 border-b">
-      <div className="flex items-center justify-between h-16 px-6 lg:px-20">
-        {/* Logo + Featured Dropdown */}
-        <div className="relative flex items-center gap-2">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-2 text-lg font-semibold hover:opacity-80"
-          >
-            Google AI
-            <ChevronDown
-              className={`w-4 h-4 transition-transform ${
-                dropdownOpen ? "rotate-180" : ""
-              }`}
+      <div className="relative flex items-center justify-between h-16 px-6 lg:px-20 mx-auto">
+        {/* ================= Logo (LEFT) ================= */}
+        <Link
+          href="/"
+          className="group flex items-center gap-2 text-lg font-semibold"
+        >
+          <div className="relative">
+            <Image
+              src="/logo/Bhobbi-logo.png"
+              alt="Bhobbi"
+              width={80}
+              height={80}
+              className="w-20 sm:w-24 lg:w-28 object-contain transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-1"
             />
-          </button>
 
-          {dropdownOpen && (
-            <div className="absolute top-14 left-0 w-[280px] rounded-xl border bg-white shadow-xl p-2">
-              {featuredItems.map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  className="block p-3 rounded-lg hover:bg-gray-100 transition"
-                >
-                  <div className="font-medium">{item.title}</div>
-                  <p className="text-xs text-gray-500">{item.description}</p>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
+            {/* Glow effect */}
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition duration-500 blur-xl bg-white/20"></div>
+          </div>
+        </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* ================= CENTER NAVBAR ================= */}
+        <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item) => (
             <div key={item.label} className="relative group">
               <Link
@@ -109,8 +91,8 @@ export default function Navbar() {
                 {item.label}
               </Link>
 
-              {/* Mega Dropdown */}
-              <div className="absolute left-0 top-12 w-[300px] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+              {/* Dropdown */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-12 w-[300px] opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200 translate-y-2 group-hover:translate-y-0">
                 <div className="bg-white border rounded-xl shadow-xl p-3 space-y-1">
                   {item.dropdown.map((drop) => (
                     <Link
@@ -130,13 +112,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <button className="hidden md:flex items-center gap-2 bg-white text-black border-black/10 border px-4 py-2 rounded-full text-base tracking-wide hover:opacity-90 transition">
-          <Sparkles size={16} />
-          Try Gemini
-        </button>
-
-        {/* Mobile Button */}
+        {/* ================= MOBILE BUTTON (RIGHT) ================= */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden"
@@ -145,7 +121,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ================= MOBILE MENU ================= */}
       {mobileOpen && (
         <div className="md:hidden border-t bg-white">
           <div className="flex flex-col p-4">
@@ -182,10 +158,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-
-            <button className="mt-4 bg-black text-white rounded-full py-2">
-              Try Gemini
-            </button>
           </div>
         </div>
       )}
