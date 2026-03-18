@@ -13,7 +13,7 @@ const newsItems = [
     title: "Building Personal Intelligence: a step towards truly personal AI",
     date: "January 2026",
     link: "https://ai.google/static/documents/building_personal_intelligence.pdf",
-    label: "Read the whitepaper",
+    label: "Learn more",
 
     alt: "Building personal AI illustration",
   },

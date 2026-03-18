@@ -222,7 +222,7 @@ const ExploreBanner: React.FC = () => {
       modalId: "modal-1",
     },
     {
-      title: "Marketing Generalist",
+      title: "Marketer as a Service",
       // description: "Explore, learn, and understand complex topics faster",
       image: "/explore-whats-possible/marketing-generalist-new.webp",
       modalId: "modal-2",
@@ -241,7 +241,7 @@ const ExploreBanner: React.FC = () => {
       modalId: "modal-4",
     },
     {
-      title: "AI Streamer/Influencer",
+      title: "AI Avatars",
       // description: "Play, test, and discover new AI capabilities",
       image: "/explore-whats-possible/ai-avatar-new.webp",
       modalId: "modal-5",
