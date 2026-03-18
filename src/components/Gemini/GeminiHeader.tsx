@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 const GeminiHeader = () => {
   return (
-    <div className="flex justify-center items-center">
-      <h1 className="flex items-center gap-3 font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+    <div className="flex justify-center items-center mt-4">
+      <h1 className="flex items-center gap-3 text-center font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
         What are you looking to automate?
       </h1>
     </div>
@@ -11,3 +9,5 @@ const GeminiHeader = () => {
 };
 
 export default GeminiHeader;
+
+
