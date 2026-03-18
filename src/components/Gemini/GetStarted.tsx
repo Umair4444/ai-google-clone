@@ -7,7 +7,7 @@ interface PromoCardProps {
   videoSrc?: string;
   link?: string;
   linkText: string;
-  isVideo?: boolean; // for future extension if you want <video>
+  isVideo?: boolean;
 }
 
 const PromoCard: React.FC<PromoCardProps> = ({
@@ -29,25 +29,21 @@ const PromoCard: React.FC<PromoCardProps> = ({
     const video = videoRef.current;
     if (!video) return;
 
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
+    video.paused ? video.play() : video.pause();
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-[40px] shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
-      {/* Full-card link for accessibility */}
+    <div className="group relative overflow-hidden rounded-[40px] shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute inset-0 z-10 pointer-events-auto"
+        className="absolute inset-0 z-10"
       />
 
       <div className="relative w-full h-72 sm:h-80 md:h-96 lg:h-[24rem] xl:h-[30rem] flex flex-col justify-between">
         {/* Background image or video */}
+
         {hasVideo && videoSrc ? (
           <video
             ref={videoRef}
@@ -71,18 +67,13 @@ const PromoCard: React.FC<PromoCardProps> = ({
           )
         )}
 
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/25 transition duration-500 group-hover:bg-black/60" />
+        <div className="absolute inset-0 bg-black/25 group-hover:bg-black/60 transition" />
 
-        {/* Content */}
-        <div className="w-full relative z-20 flex flex-col h-full p-6 sm:p-8 text-white">
-          {/* Top Row */}
-          <div className="flex items-start justify-between gap-4">
-            {/* Title */}
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-snug">
+        <div className="relative z-20 flex flex-col h-full p-6 sm:p-8 text-white">
+          <div className="flex items-start justify-between">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold">
               {title}
             </h3>
-
             {/* Play/Pause button (top-right) */}
             {hasVideo && (
               <button
@@ -110,14 +101,13 @@ const PromoCard: React.FC<PromoCardProps> = ({
               </button>
             )}
           </div>
-
           {/* Bottom Section */}
           <div className="mt-auto">
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="z-30 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 sm:px-5 sm:py-3 text-sm md:text-base font-medium backdrop-blur-sm transition hover:bg-white/30"
+              className="inline-flex items-center gap-2 rounded-full text-sm md:text-base font-medium bg-white/20 px-4 py-2 sm:px-5 sm:py-3 backdrop-blur hover:bg-white/30 transition"
             >
               <span>{linkText}</span>
               <svg
@@ -141,11 +131,37 @@ const PromoCard: React.FC<PromoCardProps> = ({
   );
 };
 
+const TopLogoRow = () => {
+  const logos = ["/logo/workplace.png", "/logo/studio.png", "/logo/lab.png"];
+
+  return (
+    <div className="grid grid-cols-3 gap-2 md:gap-10 xl:gap-14 px-4 container mb-8 mx-auto">
+      {logos.map((logo, index) => {
+        // Only apply offset on lg screens
+        const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
+
+        return (
+          <div
+            key={index}
+            className={`flex justify-center transition-transform duration-300 ${offsetClass}`}
+          >
+            <img
+              src={logo}
+              alt="logo"
+              className=" h-8 md:h-12 lg:h-16 object-contain transition duration-300 hover:scale-110"
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const GetStarted = () => {
   const cards = [
     {
       title: "Automation and Everything AI",
-      videoSrc: "/everything-we-do/ai-and-everything-ai‑ revised.mp4",
+      videoSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
       linkText: "Learn More",
       link: "/",
     },
@@ -156,9 +172,9 @@ const GetStarted = () => {
       link: "/",
     },
     {
-      title: "Business-ready workflows",
-      imageSrc: "/everything-we-do/A-New-Breathtaking-Experience.png",
-      linkText: "Learn More",
+      title: "Something industry-breaking...",
+      videoSrc: "/everything-we-do/something-industry-breaking-revised.mp4",
+      linkText: "Coming Soon in Q3 2026>",
       link: "/",
     },
     {
@@ -173,30 +189,31 @@ const GetStarted = () => {
       linkText: "Coming Soon in Q3 2026>",
       link: "/",
     },
+
     {
-      title: "Something industry-breaking...",
-      videoSrc: "/everything-we-do/something-industry-breaking‑revised.mp4",
-      linkText: "Coming Soon in Q3 2026>",
+      title: "A New Breathtaking Experience..",
+      imageSrc: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      linkText: "Coming Soon in Q1 2027",
       link: "/",
     },
   ];
 
   return (
-    <div className="flex flex-col items-center justify-between py-6 sm:py-10 xl:py-20">
-      <h2 className="mb-6 sm:mb-10 lg:mb-28 xl:mb-32 text-center text-5xl sm:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white ">
+    <div className="flex flex-col items-center py-10 xl:py-20">
+      <h2 className="mb-10 lg:mb-28 text-center text-5xl sm:text-6xl lg:text-7xl font-medium">
         Everything We Do
       </h2>
 
+      {/* ✅ ONE logo row */}
+      <TopLogoRow />
+
+      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4 container">
         {cards.map((card, index) => {
-          // Add staggered offset for middle cards on lg
-          const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : ""; // middle card of each row
+          const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
 
           return (
-            <div
-              key={index}
-              className={`transition-transform duration-300 ${offsetClass}`}
-            >
+            <div key={index} className={offsetClass}>
               <PromoCard {...card} />
             </div>
           );
