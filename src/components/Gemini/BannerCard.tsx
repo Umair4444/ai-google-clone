@@ -24,8 +24,7 @@ const BannerCard: React.FC<BannerCardProps> = ({
 }) => {
   return (
     <div
-      className="relative rounded-[30px] overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer group
-                 h-[400px] sm:h-[450px] md:h-[400px] lg:h-[550px]"
+      className="relative rounded-[30px] overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer group h-[400px] sm:h-[450px] md:h-[400px] lg:h-[550px]"
     >
       {/* Card image */}
       <img

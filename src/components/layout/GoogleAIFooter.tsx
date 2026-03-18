@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 interface FooterLink {
   label: string;
   href: string;
+  icon: React.ReactNode;
+  hoverColor?: string;
   external?: boolean;
 }
 
@@ -12,11 +16,40 @@ interface FooterColumn {
   href?: string;
 }
 
+interface SimpleLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 const GoogleAIFooter: React.FC = () => {
   const socialLinks: FooterLink[] = [
     {
-      label: "𝕏",
+      label: "X",
       href: "https://x.com/Googleai/?utm_source=ai.google&utm_medium=referral",
+      icon: <FaXTwitter className="text-xl" />,
+      hoverColor: "hover:text-black",
+      external: true,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/",
+      icon: <FaLinkedin className="text-xl" />,
+      hoverColor: "hover:text-[#0A66C2]",
+      external: true,
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/",
+      icon: <FaInstagram className="text-xl" />,
+      hoverColor: "hover:text-[#E4405F]",
+      external: true,
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/",
+      icon: <FaYoutube className="text-xl" />,
+      hoverColor: "hover:text-[#FF0000]",
       external: true,
     },
   ];
@@ -29,7 +62,7 @@ const GoogleAIFooter: React.FC = () => {
     { title: "About", href: "/" },
   ];
 
-  const bottomLinks: FooterLink[] = [
+  const bottomLinks: SimpleLink[] = [
     {
       label: "Privacy",
       href: "https://policies.google.com/privacy",
@@ -53,9 +86,9 @@ const GoogleAIFooter: React.FC = () => {
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               aria-label={link.label}
-              className="hover:text-[#1a73e8] transition-colors text-[26px] font-black"
+              className={`text-[#5f6368] ${link.hoverColor || 'hover:text-[#1a73e8]'} transition-all duration-300 hover:scale-110 hover:-translate-y-0.5`}
             >
-              {link.label}
+              {link.icon}
             </a>
           ))}
         </div>
