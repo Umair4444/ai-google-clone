@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa6";
 
 interface FooterLink {
@@ -88,9 +87,7 @@ const GoogleAIFooter: React.FC = () => {
 
         {/* Main Footer */}
         <div className="pt-10 pb-12">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-           
-
+          <div className="flex flex-row gap-10 lg:gap-16">
             {/* Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0 flex-1">
               {footerColumns.map((col, idx) => (
@@ -105,6 +102,24 @@ const GoogleAIFooter: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            {/* Logo Section - Inverted Staircase */}
+            <div className="flex flex-col items-end gap-4">
+              <img
+                src="/logo/workplace.png"
+                alt="Workplace"
+                className="w-36 h-8 object-contain translate-y-2"
+              />
+              <img
+                src="/logo/studio.png"
+                alt="Studio"
+                className="w-24 h-8 object-contain"
+              />
+              <img
+                src="/logo/lab.png"
+                alt="Lab"
+                className="w-16 h-6 object-contain"
+              />
             </div>
           </div>
         </div>
