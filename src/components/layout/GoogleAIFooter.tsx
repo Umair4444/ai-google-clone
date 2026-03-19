@@ -25,13 +25,6 @@ interface SimpleLink {
 const GoogleAIFooter: React.FC = () => {
   const socialLinks: FooterLink[] = [
     {
-      label: "X",
-      href: "https://x.com/Googleai/?utm_source=ai.google&utm_medium=referral",
-      icon: <FaXTwitter className="text-xl" />,
-      hoverColor: "hover:text-black",
-      external: true,
-    },
-    {
       label: "LinkedIn",
       href: "https://www.linkedin.com/",
       icon: <FaLinkedin className="text-xl" />,
@@ -86,7 +79,7 @@ const GoogleAIFooter: React.FC = () => {
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               aria-label={link.label}
-              className={`text-[#5f6368] ${link.hoverColor || 'hover:text-[#1a73e8]'} transition-all duration-300 hover:scale-110 hover:-translate-y-0.5`}
+              className={`text-[#5f6368] ${link.hoverColor || "hover:text-[#1a73e8]"} transition-all duration-300 hover:scale-110 hover:-translate-y-0.5`}
             >
               {link.icon}
             </a>
@@ -96,13 +89,7 @@ const GoogleAIFooter: React.FC = () => {
         {/* Main Footer */}
         <div className="pt-10 pb-12">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            {/* Title */}
-            <div className="w-full lg:w-[280px]">
-              <h2 className="text-[28px] leading-[1.15] font-medium">
-                Making AI helpful
-                <br className="hidden lg:block" /> for everyone
-              </h2>
-            </div>
+           
 
             {/* Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0 flex-1">

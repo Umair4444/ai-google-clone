@@ -30,8 +30,8 @@ const BannerCard: React.FC<BannerCardProps> = ({
       <img
         src={image}
         alt={title}
-        // className="w-full h-full object-center transition-transform duration-300 group-hover:scale-105"
-        className="w-full h-full object-fill object-center transition-transform duration-300 group-hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        // className="w-full h-full object-fill object-center transition-transform duration-300 group-hover:scale-105"
       />
 
       {/* Persistent dark overlay */}

@@ -107,7 +107,7 @@ const PromoCard: React.FC<PromoCardProps> = ({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full text-sm md:text-base font-medium bg-white/20 px-4 py-2 sm:px-5 sm:py-3 backdrop-blur hover:bg-white/30 transition"
+              className="inline-flex items-center gap-2 rounded-full text-sm md:text-base font-medium bg-transparent/10 px-4 py-2 sm:px-5 sm:py-3 backdrop-blur hover:bg-white/20 transition"
             >
               <span>{linkText}</span>
               <svg
@@ -168,13 +168,13 @@ const GetStarted = () => {
     {
       title: "The next big thing?",
       videoSrc: "/everything-we-do/next-big-thing-revised.mp4",
-      linkText: "Coming Soon in Q3 2026>",
+      linkText: "Coming Soon in Q3 2026",
       link: "/",
     },
     {
       title: "Something industry-breaking...",
       videoSrc: "/everything-we-do/something-industry-breaking-revised.mp4",
-      linkText: "Coming Soon in Q3 2026>",
+      linkText: "Coming Soon in Q3 2026",
       link: "/",
     },
     {
@@ -186,7 +186,7 @@ const GetStarted = () => {
     {
       title: "A new form of entertainment...",
       videoSrc: "/everything-we-do/new-form-of-entertainment-revised.mp4",
-      linkText: "Coming Soon in Q3 2026>",
+      linkText: "Coming Soon in Q3 2026",
       link: "/",
     },
 
@@ -199,7 +199,7 @@ const GetStarted = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-10 xl:py-20">
+    <div className="flex flex-col items-center py-18 xl:py-20">
       <h2 className="mb-10 lg:mb-28 text-center text-5xl sm:text-6xl lg:text-7xl font-medium">
         Everything We Do
       </h2>
