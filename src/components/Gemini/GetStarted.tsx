@@ -132,27 +132,34 @@ const PromoCard: React.FC<PromoCardProps> = ({
 };
 
 const TopLogoRow = () => {
-  const logos = ["/logo/workplace.png", "/logo/studio.png", "/logo/lab.png"];
-
   return (
-    <div className="grid grid-cols-3 gap-2 md:gap-10 xl:gap-14 px-4 container mb-8 mx-auto">
-      {logos.map((logo, index) => {
-        // Only apply offset on lg screens
-        const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
+    <div className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-3 sm:gap-2 md:gap-2 xl:gap-14 px-4 mb-8 mx-auto items-center">
+      {/* LEFT LOGO */}
+      <div className="sm:w-7/12 md:w-3/4 lg:w-full flex lg:justify-center transition-transform duration-300">
+        <img
+          src="/logo/workplace.png"
+          alt="logo"
+          className="h-8 md:h-16 lg:h-20 object-contain transition duration-300 scale-115 sm:scale-120 md:scale-100 hover:scale-110"
+        />
+      </div>
 
-        return (
-          <div
-            key={index}
-            className={`flex justify-center transition-transform duration-300 ${offsetClass}`}
-          >
-            <img
-              src={logo}
-              alt="logo"
-              className=" h-8 md:h-12 lg:h-16 object-contain transition duration-300 hover:scale-110"
-            />
-          </div>
-        );
-      })}
+      {/* CENTER LOGO */}
+      <div className="md:w-full flex justify-center transition-transform duration-300 lg:-translate-y-16">
+        <img
+          src="/logo/studio.png"
+          alt="logo"
+          className="h-8 md:h-12 lg:h-16 object-contain transition duration-300 hover:scale-110"
+        />
+      </div>
+
+      {/* RIGHT LOGO */}
+      <div className="sm:w-4/12 md:w-[35%] lg:w-full flex justify-end lg:justify-center transition-transform duration-300">
+        <img
+          src="/logo/lab.png"
+          alt="logo"
+          className="h-8 md:h-12 lg:h-16 object-contain transition duration-300 hover:scale-110"
+        />
+      </div>
     </div>
   );
 };
