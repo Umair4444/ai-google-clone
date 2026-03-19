@@ -100,7 +100,7 @@ function NewsCard({ title, date, link, label, image, alt = "" }: NewsItem) {
 export default function NewsGroupSection() {
   return (
     <div className="mx-auto px-4 sm:px-6 lg:px-16 xl:px-20 py-8 sm:py-10 lg:py-12">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 sm:mb-8">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 sm:mb-8 px-4">
         Latest News
       </h1>
 

@@ -199,7 +199,7 @@ const GetStarted = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-18 xl:py-20">
+    <div className="w-full max-w-7xl mx-auto flex flex-col items-center py-18 xl:py-20">
       <h2 className="mb-10 lg:mb-28 text-center text-5xl sm:text-6xl lg:text-7xl font-medium">
         Everything We Do
       </h2>
@@ -208,7 +208,7 @@ const GetStarted = () => {
       <TopLogoRow />
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4 container">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4">
         {cards.map((card, index) => {
           const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
 
