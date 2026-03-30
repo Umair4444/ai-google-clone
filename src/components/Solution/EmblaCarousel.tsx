@@ -258,9 +258,8 @@ import { ChevronLeft, ChevronRight, Play, Pause, Circle } from "lucide-react";
 interface CardData {
   id: number;
   title: string;
-  mediaType: "image" | "youtube" | "video" | "local-video";
+  mediaType: "image" | "youtube" | "local-video";
   mediaSrc: string;
-  poster?: string;
   link: string;
   linkText: string;
 }
@@ -388,8 +387,9 @@ const EmblaCarousel: React.FC = () => {
                       {card.mediaType === "youtube" ? (
                         <iframe
                           src={card.mediaSrc}
-                          className="w-full h-full pointer-events-none"
+                          className="w-full h-full"
                           allowFullScreen
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
                       ) : card.mediaType === "image" ? (
                         <img
