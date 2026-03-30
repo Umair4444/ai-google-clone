@@ -253,7 +253,7 @@
 
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Pause, Circle } from "lucide-react";
 
 interface CardData {
   id: number;
@@ -270,8 +270,7 @@ const cards: CardData[] = [
     id: 1,
     title: "Get real-time help with Search Live in the Google app",
     mediaType: "local-video",
-    mediaSrc: "/everything-we-do/ai-and-everything-ai-revised.mp4",
-    poster: "/thumbnails/video1-poster.jpg",
+    mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
     link: "#",
     linkText: "Download from Google Play",
   },
@@ -298,7 +297,6 @@ const cards: CardData[] = [
     title: "Discover new places with Google Earth",
     mediaType: "local-video",
     mediaSrc: "/videos/sample-video.mp4",
-    poster: "/thumbnails/video2-poster.jpg",
     link: "#",
     linkText: "Explore in Google Earth",
   },
@@ -336,12 +334,19 @@ const EmblaCarousel: React.FC = () => {
   }, [emblaApi, onSelect]);
 
   const setVideoRef = useCallback((id: number, el: HTMLVideoElement | null) => {
-    if (el) videoRefs.current.set(id, el);
-    else videoRefs.current.delete(id);
+    if (el) {
+      videoRefs.current.set(id, el);
+      // Add error handling for video loading
+      el.addEventListener('error', () => {
+        console.error(`Video ${id} failed to load`);
+      });
+    } else {
+      videoRefs.current.delete(id);
+    }
   }, []);
 
   const handleVideoClick = useCallback(
-    (id: number) => {
+    async (id: number) => {
       if (playingVideo === id) {
         videoRefs.current.get(id)?.pause();
         setPlayingVideo(null);
@@ -349,8 +354,12 @@ const EmblaCarousel: React.FC = () => {
         videoRefs.current.get(playingVideo ?? -1)?.pause();
         const video = videoRefs.current.get(id);
         if (video) {
-          video.play();
-          setPlayingVideo(id);
+          try {
+            await video.play();
+            setPlayingVideo(id);
+          } catch (error) {
+            console.error('Video playback failed:', error);
+          }
         }
       }
     },
@@ -395,22 +404,24 @@ const EmblaCarousel: React.FC = () => {
                             src={card.mediaSrc}
                             poster={card.poster}
                             draggable={false}
-                            className="w-full h-full object-cover pointer-events-none"
+                            className="w-full h-full object-cover"
                             loop
                             muted
+                            playsInline
+                            preload="metadata"
                           />
 
                           <button
                             onClick={() => handleVideoClick(card.id)}
-                            className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30"
+                            className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg"
+                            type="button"
+                            aria-label={playingVideo === card.id ? "Pause video" : "Play video"}
                           >
-                            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow">
-                              {playingVideo === card.id ? (
-                                <Pause />
-                              ) : (
-                                <Play className="ml-1" />
-                              )}
-                            </div>
+                            {playingVideo === card.id ? (
+                              <Pause className="w-4 h-4 text-white" />
+                            ) : (
+                              <Play className="w-4 h-4 text-white ml-1 fill-white" />
+                            )}
                           </button>
                         </>
                       )}
