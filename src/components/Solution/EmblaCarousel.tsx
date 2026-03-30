@@ -402,7 +402,6 @@ const EmblaCarousel: React.FC = () => {
                           <video
                             ref={(el) => setVideoRef(card.id, el)}
                             src={card.mediaSrc}
-                            poster={card.poster}
                             draggable={false}
                             className="w-full h-full object-cover"
                             loop
