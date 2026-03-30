@@ -260,6 +260,7 @@ interface CardData {
   title: string;
   mediaType: "image" | "youtube" | "local-video";
   mediaSrc: string;
+  poster?: string;
   link: string;
   linkText: string;
 }
@@ -270,6 +271,7 @@ const cards: CardData[] = [
     title: "Get real-time help with Search Live in the Google app",
     mediaType: "local-video",
     mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+    poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
     link: "#",
     linkText: "Download from Google Play",
   },
@@ -279,6 +281,7 @@ const cards: CardData[] = [
       "Have more natural and intuitive interactions in Gemini Live with 3.1 Flash Live",
     mediaType: "youtube",
     mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
+    poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
     link: "#",
     linkText: "Try in Gemini",
   },
@@ -296,6 +299,7 @@ const cards: CardData[] = [
     title: "Discover new places with Google Earth",
     mediaType: "local-video",
     mediaSrc: "/videos/sample-video.mp4",
+    poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
     link: "#",
     linkText: "Explore in Google Earth",
   },
@@ -312,8 +316,10 @@ const EmblaCarousel: React.FC = () => {
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [youTubeStarted, setYouTubeStarted] = useState<number | null>(null);
 
   const videoRefs = useRef<Map<number, HTMLVideoElement>>(new Map());
+  const youtubeRefs = useRef<Map<number, HTMLIFrameElement>>(new Map());
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -335,7 +341,6 @@ const EmblaCarousel: React.FC = () => {
   const setVideoRef = useCallback((id: number, el: HTMLVideoElement | null) => {
     if (el) {
       videoRefs.current.set(id, el);
-      // Add error handling for video loading
       el.addEventListener('error', () => {
         console.error(`Video ${id} failed to load`);
       });
@@ -344,25 +349,54 @@ const EmblaCarousel: React.FC = () => {
     }
   }, []);
 
+  const setYouTubeRef = useCallback((id: number, el: HTMLIFrameElement | null) => {
+    if (el) {
+      youtubeRefs.current.set(id, el);
+    } else {
+      youtubeRefs.current.delete(id);
+    }
+  }, []);
+
   const handleVideoClick = useCallback(
-    async (id: number) => {
-      if (playingVideo === id) {
-        videoRefs.current.get(id)?.pause();
-        setPlayingVideo(null);
+    async (id: number, mediaType: "youtube" | "local-video") => {
+      if (mediaType === "youtube") {
+        if (youTubeStarted === id) {
+          const iframe = youtubeRefs.current.get(id);
+          if (iframe) {
+            iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          }
+          setYouTubeStarted(null);
+        } else {
+          if (youTubeStarted !== null) {
+            const prevIframe = youtubeRefs.current.get(youTubeStarted);
+            prevIframe?.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          }
+          setYouTubeStarted(id);
+          // Wait for iframe to load and initialize YouTube API
+          setTimeout(() => {
+            const iframe = youtubeRefs.current.get(id);
+            if (iframe) {
+              iframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            }
+          }, 500);
+        }
+        setPlayingVideo(youTubeStarted === id ? null : id);
       } else {
-        videoRefs.current.get(playingVideo ?? -1)?.pause();
-        const video = videoRefs.current.get(id);
-        if (video) {
-          try {
+        if (playingVideo === id) {
+          videoRefs.current.get(id)?.pause();
+          setPlayingVideo(null);
+        } else {
+          videoRefs.current.get(playingVideo ?? -1)?.pause();
+          const video = videoRefs.current.get(id);
+          if (video) {
             await video.play();
             setPlayingVideo(id);
-          } catch (error) {
-            console.error('Video playback failed:', error);
           }
         }
+        setYouTubeStarted(null);
       }
     },
-    [playingVideo],
+    [playingVideo, youTubeStarted],
   );
 
   return (
@@ -385,12 +419,34 @@ const EmblaCarousel: React.FC = () => {
                     {/* Media */}
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {card.mediaType === "youtube" ? (
-                        <iframe
-                          src={card.mediaSrc}
-                          className="w-full h-full"
-                          allowFullScreen
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        />
+                        <>
+                          {youTubeStarted === card.id ? (
+                            <iframe
+                              ref={(el) => setYouTubeRef(card.id, el)}
+                              src={`${card.mediaSrc}?enablejsapi=1&rel=0&modestbranding=1&controls=1`}
+                              className="w-full h-full"
+                              allowFullScreen
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            />
+                          ) : (
+                            <>
+                              <img
+                                src={card.poster}
+                                alt={card.title}
+                                className="w-full h-full object-cover"
+                                draggable={false}
+                              />
+                              <button
+                                onClick={() => handleVideoClick(card.id, "youtube")}
+                                className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg"
+                                type="button"
+                                aria-label="Play video"
+                              >
+                                <Play className="w-4 h-4 text-white ml-1 fill-white" />
+                              </button>
+                            </>
+                          )}
+                        </>
                       ) : card.mediaType === "image" ? (
                         <img
                           src={card.mediaSrc}
@@ -402,6 +458,7 @@ const EmblaCarousel: React.FC = () => {
                           <video
                             ref={(el) => setVideoRef(card.id, el)}
                             src={card.mediaSrc}
+                            poster={card.poster}
                             draggable={false}
                             className="w-full h-full object-cover"
                             loop
@@ -411,7 +468,7 @@ const EmblaCarousel: React.FC = () => {
                           />
 
                           <button
-                            onClick={() => handleVideoClick(card.id)}
+                            onClick={() => handleVideoClick(card.id, "local-video")}
                             className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg"
                             type="button"
                             aria-label={playingVideo === card.id ? "Pause video" : "Play video"}
