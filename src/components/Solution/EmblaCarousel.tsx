@@ -310,6 +310,8 @@ const EmblaCarousel: React.FC = () => {
     align: "start",
     containScroll: "trimSnaps",
     dragFree: true,
+    slidesToScroll: 1,
+    skipSnaps: false,
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -400,22 +402,24 @@ const EmblaCarousel: React.FC = () => {
   );
 
   return (
-    <div className="relative py-12 overflow-x-hidden">
+    <div className="relative py-12 overflow-x-hidden select-none">
       <div className="px-20 mx-auto">
         {/* Embla Viewport */}
         <div
-          className="overflow-hidden cursor-grab py-8 active:cursor-grabbing"
+          className="overflow-hidden cursor-grab py-8 active:cursor-grabbing select-none"
           ref={emblaRef}
+          style={{ touchAction: 'pan-y', userSelect: 'none' }}
         >
           {/* Track */}
-          <div className="flex">
+          <div className="flex select-none" style={{ touchAction: 'pan-y', userSelect: 'none' }}>
             {cards.map((card) => (
               <div
                 key={card.id}
                 className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%]"
+                style={{ touchAction: 'pan-y' }}
               >
                 <div className="px-3 h-full">
-                  <div className="h-full flex flex-col rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-2xl hover:scale-[1.02]">
+                  <div className="h-full flex flex-col rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-2xl hover:scale-[1.02]" style={{ touchAction: 'pan-y' }}>
                     {/* Media */}
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {card.mediaType === "youtube" ? (
@@ -424,7 +428,7 @@ const EmblaCarousel: React.FC = () => {
                             <iframe
                               ref={(el) => setYouTubeRef(card.id, el)}
                               src={`${card.mediaSrc}?enablejsapi=1&rel=0&modestbranding=1&controls=1`}
-                              className="w-full h-full"
+                              className="w-full h-full pointer-events-auto"
                               allowFullScreen
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             />
@@ -433,12 +437,16 @@ const EmblaCarousel: React.FC = () => {
                               <img
                                 src={card.poster}
                                 alt={card.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover pointer-events-none select-none"
                                 draggable={false}
                               />
                               <button
-                                onClick={() => handleVideoClick(card.id, "youtube")}
-                                className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleVideoClick(card.id, "youtube");
+                                }}
+                                onPointerDown={(e) => e.stopPropagation()}
+                                className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg pointer-events-auto"
                                 type="button"
                                 aria-label="Play video"
                               >
@@ -451,7 +459,7 @@ const EmblaCarousel: React.FC = () => {
                         <img
                           src={card.mediaSrc}
                           draggable={false}
-                          className="w-full h-full object-cover pointer-events-none transition-transform hover:scale-110"
+                          className="w-full h-full object-cover pointer-events-none select-none transition-transform hover:scale-110"
                         />
                       ) : (
                         <>
@@ -460,7 +468,7 @@ const EmblaCarousel: React.FC = () => {
                             src={card.mediaSrc}
                             poster={card.poster}
                             draggable={false}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover pointer-events-none select-none"
                             loop
                             muted
                             playsInline
@@ -468,8 +476,12 @@ const EmblaCarousel: React.FC = () => {
                           />
 
                           <button
-                            onClick={() => handleVideoClick(card.id, "local-video")}
-                            className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleVideoClick(card.id, "local-video");
+                            }}
+                            onPointerDown={(e) => e.stopPropagation()}
+                            className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg pointer-events-auto"
                             type="button"
                             aria-label={playingVideo === card.id ? "Pause video" : "Play video"}
                           >
@@ -491,6 +503,7 @@ const EmblaCarousel: React.FC = () => {
 
                       <a
                         href={card.link}
+                        onClick={(e) => e.stopPropagation()}
                         className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700"
                       >
                         {card.linkText}
