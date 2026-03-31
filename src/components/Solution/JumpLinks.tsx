@@ -35,29 +35,31 @@ export default function JumpLinks({
 
   return (
     <div className={`py-8 w-full ${className}`}>
-      <ul className="w-fit flex flex-wrap gap-2 justify-center bg-gray-100 px-2 py-2 rounded-full mx-auto">
-        {links.map((link) => {
-          const isActive = active === link.id;
+      <div className="w-fit mx-auto overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
+        <ul className="flex flex-nowrap gap-1 bg-gray-100 px-1 py-1 rounded-full mx-auto w-max min-w-full">
+          {links.map((link) => {
+            const isActive = active === link.id;
 
-          return (
-            <li key={link.id}>
-              <button
-                onClick={() => handleClick(link.id)}
-                aria-current={isActive ? "true" : undefined}
-                className={`px-4 py-4 w-40 rounded-full text-base sm:text-lg font-medium transition-all duration-200
-                  ${
-                    isActive
-                      ? "bg-black text-white shadow-md"
-                      : "text-gray-700 hover:bg-gray-200"
-                  }
-                `}
-              >
-                {link.label}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+            return (
+              <li key={link.id} className="shrink-0">
+                <button
+                  onClick={() => handleClick(link.id)}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`px-6 py-3 rounded-full text-base sm:text-lg font-medium transition-all duration-200 whitespace-nowrap
+                    ${
+                      isActive
+                        ? "bg-black text-white shadow-md"
+                        : "text-gray-700 hover:bg-gray-200"
+                    }
+                  `}
+                >
+                  {link.label}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
