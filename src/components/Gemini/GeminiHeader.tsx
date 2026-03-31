@@ -13,6 +13,7 @@
 type HeaderProps = {
   subtitle?: string;
   title: string;
+  Logo?: string;
   description?: string;
   className?: string;
   subtitleClassName?: string;
@@ -23,6 +24,7 @@ type HeaderProps = {
 const GeminiHeader = ({
   subtitle,
   title,
+  Logo,
   description,
   className = "",
   titleClassName = "",
@@ -46,13 +48,15 @@ const GeminiHeader = ({
       </h1>
 
       {/* Logo */}
-      <div className="mt-4 flex items-center justify-center">
-        <img
-          src="/logo/workplace.png"
-          alt="Logo"
-          className="w-56 sm:w-68 lg:w-80 object-contain"
-        />
-      </div>
+      {Logo && (
+        <div className="mt-4 flex items-center justify-center">
+          <img
+            src={Logo}
+            alt="Logo"
+            className="w-56 sm:w-68 lg:w-80 object-contain"
+          />
+        </div>
+      )}
 
       {description && (
         <p

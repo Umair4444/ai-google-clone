@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import ReusableCarousel, {
-  CardData,
-} from "@/components/Solution/EmblaCarousel";
+import ReusableCarousel from "@/components/Solution/EmblaCarousel";
 import JumpLinks from "@/components/Solution/JumpLinks";
 import { useRouter } from "next/navigation";
+import { CardData } from "@/components/Solution/Card";
 
 const SolutionPage = () => {
   const router = useRouter();
@@ -75,7 +74,7 @@ const SolutionPage = () => {
     {
       id: 5,
       title: "AI Content & Personalization",
-      mediaType: "local-video",
+      mediaType: "youtube",
       mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
@@ -132,7 +131,7 @@ const SolutionPage = () => {
     {
       id: 5,
       title: "Performance Marketing",
-      mediaType: "local-video",
+      mediaType: "youtube",
       mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
@@ -206,14 +205,14 @@ const SolutionPage = () => {
       </div>
 
       {/* Carousel */}
-      <div className="space-y-12">
+      <div className="space-y-12 py-4">
         {/* Workplace Section */}
         <section id="Workplace" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/workplace.png"
               alt="Workplace"
-              className="h-12 w-auto mb-2"
+              className=" w-68 sm:w-72 lg:w-76 mb-2"
             />
           </div>
           <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
@@ -226,7 +225,7 @@ const SolutionPage = () => {
             <img
               src="/logo/studio.png"
               alt="Studio"
-              className="h-12 w-auto mb-2"
+              className="w-44 sm:w-48 lg:w-52 mb-2"
             />
           </div>
           <ReusableCarousel cards={StudioCards} title="Coming Soon" />
@@ -235,7 +234,11 @@ const SolutionPage = () => {
         {/* Lab Section */}
         <section id="Lab" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
-            <img src="/logo/lab.png" alt="Lab" className="h-12 w-auto mb-2" />
+            <img
+              src="/logo/lab.png"
+              alt="Lab"
+              className="w-24 sm:w-28 lg:w-32 mb-2"
+            />
           </div>
           <ReusableCarousel cards={LabCards} title="Coming Soon" />
         </section>

@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import ReusableCarousel, {
-  CardData,
-} from "@/components/Solution/EmblaCarousel";
+import ReusableCarousel from "@/components/Solution/EmblaCarousel";
 import JumpLinks from "@/components/Solution/JumpLinks";
 import { useRouter } from "next/navigation";
+import { CardData } from "@/components/Solution/Card";
 
 const ServicePage = () => {
   const router = useRouter();
@@ -30,8 +29,8 @@ const ServicePage = () => {
   }, [lastScrollY]);
 
   const links = [
-    { id: "AiPoweredCards", label: "AiPoweredCards" },
-    { id: "SpecialtyCards", label: "SpecialtyCards" },
+    { id: "AI-Powered", label: "AI-Powered" },
+    { id: "Specialty", label: "Specialty" },
   ];
 
   const AiPoweredCards: CardData[] = [
@@ -152,6 +151,7 @@ const ServicePage = () => {
     <main>
       <GeminiHeader
         title="Explore our services and solutions in"
+        Logo="/logo/workplace.png"
         description="We're building AI skills programs, trainings, and tools to address the specific needs of workers everywhere. Discover Google's courses and resources designed to help you succeed in an AI-driven world."
         className="py-8"
       />
@@ -163,6 +163,19 @@ const ServicePage = () => {
         }`}
       >
         <JumpLinks links={links} defaultActive="AiPoweredCards" />
+      </div>
+
+      {/* Carousel */}
+      <div className="space-y-12">
+        {/* Workplace Section */}
+        <section id="AI-Powered" className="scroll-mt-28">
+          <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
+        </section>
+
+        {/* Workplace Section */}
+        <section id="Specialty" className="scroll-mt-28">
+          <ReusableCarousel cards={SpecialtyCards} title="Specialty" />
+        </section>
       </div>
     </main>
   );
