@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import GeminiHeader from "@/components/Gemini/GeminiHeader";
 import ReusableCarousel, {
   CardData,
@@ -9,6 +10,24 @@ import { useRouter } from "next/navigation";
 
 const SolutionPage = () => {
   const router = useRouter();
+  const [navVisible, setNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Hide when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY) {
+        setNavVisible(false);
+      } else {
+        setNavVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const links = [
     { id: "Workplace", label: "Workplace" },
@@ -178,12 +197,18 @@ const SolutionPage = () => {
       <GeminiHeader title="Explore our services and solutions" />
 
       {/* Jump Links */}
-      <JumpLinks links={links} defaultActive="Workplace" />
+      <div
+        className={`sticky z-40 transition-all duration-300 ease-in-out ${
+          navVisible ? "top-12" : "-top-4"
+        }`}
+      >
+        <JumpLinks links={links} defaultActive="Workplace" />
+      </div>
 
       {/* Carousel */}
       <div className="space-y-12">
         {/* Workplace Section */}
-        <section id="Workplace" className="scroll-mt-24">
+        <section id="Workplace" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/workplace.png"
@@ -196,7 +221,7 @@ const SolutionPage = () => {
         </section>
 
         {/* Studio Section */}
-        <section id="Studio" className="scroll-mt-24">
+        <section id="Studio" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/studio.png"
@@ -208,7 +233,7 @@ const SolutionPage = () => {
         </section>
 
         {/* Lab Section */}
-        <section id="Lab" className="scroll-mt-24">
+        <section id="Lab" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img src="/logo/lab.png" alt="Lab" className="h-12 w-auto mb-2" />
           </div>

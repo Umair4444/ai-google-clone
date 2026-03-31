@@ -26,10 +26,18 @@ export default function JumpLinks({
     setActive(id);
     onChange?.(id);
 
-    // Smooth scroll
+    // Smooth scroll with offset for navbar and jumplink
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const navbarHeight = 64; // Navbar height in px
+      const jumplinkHeight = 60; // Approximate jumplink height in px
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight - jumplinkHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
