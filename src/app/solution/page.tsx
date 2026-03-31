@@ -130,6 +130,48 @@ const SolutionPage = () => {
     },
   ];
 
+  const StudioCards: CardData[] = [
+    {
+      id: 1,
+      title: "The next big thing?",
+      mediaType: "local-video",
+      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      onClick: () => router.push("/"),
+      linkText: "Details in Q3 2026",
+    },
+    {
+      id: 2,
+      title: "A new form of entertainment...",
+      mediaType: "youtube",
+      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
+      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      onClick: () => router.push("/"),
+      linkText: "Details in Q3 2026",
+    },
+  ];
+
+  const LabCards: CardData[] = [
+    {
+      id: 1,
+      title: "Something industry-breaking...",
+      mediaType: "local-video",
+      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      onClick: () => router.push("/"),
+      linkText: "Coming Soon in Q3 2026",
+    },
+    {
+      id: 2,
+      title: "A New Breathtaking Experience..",
+      mediaType: "youtube",
+      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
+      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      onClick: () => router.push("/"),
+      linkText: "Details in Q1 2027",
+    },
+  ];
+
   return (
     <main>
       {/* Header */}
@@ -139,7 +181,40 @@ const SolutionPage = () => {
       <JumpLinks links={links} defaultActive="Workplace" />
 
       {/* Carousel */}
-      <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
+      <div className="space-y-8">
+        {/* Workplace Section */}
+        <section id="Workplace" className="scroll-mt-24">
+          <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
+            <img
+              src="/logo/workplace.png"
+              alt="Workplace"
+              className="h-12 w-auto mb-2"
+            />
+          </div>
+          <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
+          <ReusableCarousel cards={SpecialtyCards} title="Specialty" />
+        </section>
+
+        {/* Studio Section */}
+        <section id="Studio" className="scroll-mt-24">
+          <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
+            <img
+              src="/logo/studio.png"
+              alt="Studio"
+              className="h-12 w-auto mb-2"
+            />
+          </div>
+          <ReusableCarousel cards={StudioCards} title="Coming Soon" />
+        </section>
+
+        {/* Lab Section */}
+        <section id="Lab" className="scroll-mt-24">
+          <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
+            <img src="/logo/lab.png" alt="Lab" className="h-12 w-auto mb-2" />
+          </div>
+          <ReusableCarousel cards={LabCards} title="Coming Soon" />
+        </section>
+      </div>
     </main>
   );
 };

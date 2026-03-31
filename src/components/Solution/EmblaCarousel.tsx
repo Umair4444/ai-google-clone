@@ -474,7 +474,7 @@ const ReusableCarousel: React.FC<ReusableCarouselProps> = ({
   );
 
   return (
-    <div className="relative py-8 sm:py-10 lg:py-12 overflow-x-hidden select-none">
+    <div className="relative py-2 sm:py-4 lg:py-6 overflow-x-hidden select-none">
       <div className="mx-auto px-4 sm:px-6 lg:px-16 xl:px-20">
         {/* Title */}
         <h2 className="text-4xl px-6 font-bold text-zinc-900 dark:text-white">
