@@ -30,26 +30,26 @@ const GeminiHeader = ({
   descriptionClassName = "",
 }: HeaderProps) => {
   return (
-    <div
-      className={`flex flex-col justify-center items-center gap-4 text-center ${className}`}
-    >
+    <div className={`flex flex-col items-center text-center px-4 ${className}`}>
       {subtitle && (
         <p
-          className={`text-base sm:text-lg md:text-xl text-gray-700 ${subtitleClassName}`}
+          className={`mb-2 text-sm sm:text-base lg:text-lg font-medium text-gray-600 tracking-wide ${subtitleClassName}`}
         >
           {subtitle}
         </p>
       )}
 
       <h1
-        className={`flex items-center font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl ${titleClassName}`}
+        className={`font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight sm:leading-snug max-w-4xl ${titleClassName}`}
       >
         {title}
       </h1>
 
+      {/* Workplace Logo */}
+
       {description && (
         <p
-          className={`max-w-lg text-sm sm:text-base md:text-lg text-gray-500 ${descriptionClassName}`}
+          className={`max-w-xl lg:max-w-2xl mt-2 lg:mt-4 text-base sm:text-lg g:text-xl text-gray-500 leading-relaxed ${descriptionClassName}`}
         >
           {description}
         </p>
