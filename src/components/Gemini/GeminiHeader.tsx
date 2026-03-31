@@ -45,7 +45,14 @@ const GeminiHeader = ({
         {title}
       </h1>
 
-      {/* Workplace Logo */}
+      {/* Logo */}
+      <div className="mt-4 flex items-center justify-center">
+        <img
+          src="/logo/workplace.png"
+          alt="Logo"
+          className="w-56 sm:w-68 lg:w-80 object-contain"
+        />
+      </div>
 
       {description && (
         <p
