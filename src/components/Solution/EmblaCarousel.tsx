@@ -343,7 +343,7 @@ const EmblaCarousel: React.FC = () => {
   const setVideoRef = useCallback((id: number, el: HTMLVideoElement | null) => {
     if (el) {
       videoRefs.current.set(id, el);
-      el.addEventListener('error', () => {
+      el.addEventListener("error", () => {
         console.error(`Video ${id} failed to load`);
       });
     } else {
@@ -351,13 +351,16 @@ const EmblaCarousel: React.FC = () => {
     }
   }, []);
 
-  const setYouTubeRef = useCallback((id: number, el: HTMLIFrameElement | null) => {
-    if (el) {
-      youtubeRefs.current.set(id, el);
-    } else {
-      youtubeRefs.current.delete(id);
-    }
-  }, []);
+  const setYouTubeRef = useCallback(
+    (id: number, el: HTMLIFrameElement | null) => {
+      if (el) {
+        youtubeRefs.current.set(id, el);
+      } else {
+        youtubeRefs.current.delete(id);
+      }
+    },
+    [],
+  );
 
   const handleVideoClick = useCallback(
     async (id: number, mediaType: "youtube" | "local-video") => {
@@ -365,20 +368,29 @@ const EmblaCarousel: React.FC = () => {
         if (youTubeStarted === id) {
           const iframe = youtubeRefs.current.get(id);
           if (iframe) {
-            iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            iframe.contentWindow?.postMessage(
+              '{"event":"command","func":"pauseVideo","args":""}',
+              "*",
+            );
           }
           setYouTubeStarted(null);
         } else {
           if (youTubeStarted !== null) {
             const prevIframe = youtubeRefs.current.get(youTubeStarted);
-            prevIframe?.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            prevIframe?.contentWindow?.postMessage(
+              '{"event":"command","func":"pauseVideo","args":""}',
+              "*",
+            );
           }
           setYouTubeStarted(id);
           // Wait for iframe to load and initialize YouTube API
           setTimeout(() => {
             const iframe = youtubeRefs.current.get(id);
             if (iframe) {
-              iframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+              iframe.contentWindow?.postMessage(
+                '{"event":"command","func":"playVideo","args":""}',
+                "*",
+              );
             }
           }, 500);
         }
@@ -404,22 +416,33 @@ const EmblaCarousel: React.FC = () => {
   return (
     <div className="relative py-12 overflow-x-hidden select-none">
       <div className="px-20 mx-auto">
+        {/* Title */}
+        <h2 className="text-4xl px-6 font-bold mb-6 text-zinc-900 dark:text-white">
+          AI-Powered
+        </h2>
+
         {/* Embla Viewport */}
         <div
           className="overflow-hidden cursor-grab py-8 active:cursor-grabbing select-none"
           ref={emblaRef}
-          style={{ touchAction: 'pan-y', userSelect: 'none' }}
+          style={{ touchAction: "pan-x", userSelect: "none" }}
         >
           {/* Track */}
-          <div className="flex select-none" style={{ touchAction: 'pan-y', userSelect: 'none' }}>
+          <div
+            className="flex select-none"
+            style={{ touchAction: "pan-x", userSelect: "none" }}
+          >
             {cards.map((card) => (
               <div
                 key={card.id}
                 className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%]"
-                style={{ touchAction: 'pan-y' }}
+                style={{ touchAction: "pan-x" }}
               >
                 <div className="px-3 h-full">
-                  <div className="h-full flex flex-col rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-2xl hover:scale-[1.02]" style={{ touchAction: 'pan-y' }}>
+                  <div
+                    className="h-full flex flex-col rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition-all hover:shadow-2xl hover:scale-[1.02]"
+                    style={{ touchAction: "pan-x" }}
+                  >
                     {/* Media */}
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {card.mediaType === "youtube" ? (
@@ -483,7 +506,11 @@ const EmblaCarousel: React.FC = () => {
                             onPointerDown={(e) => e.stopPropagation()}
                             className="absolute bottom-4 right-4 flex items-center justify-center bg-white/20 hover:bg-white/30 transition-colors z-10 rounded-full p-4 backdrop-blur-sm shadow-lg pointer-events-auto"
                             type="button"
-                            aria-label={playingVideo === card.id ? "Pause video" : "Play video"}
+                            aria-label={
+                              playingVideo === card.id
+                                ? "Pause video"
+                                : "Play video"
+                            }
                           >
                             {playingVideo === card.id ? (
                               <Pause className="w-4 h-4 text-white" />
@@ -518,13 +545,13 @@ const EmblaCarousel: React.FC = () => {
         </div>
 
         {/* Controls */}
-        <div className="mt-6 flex items-center justify-between">
+        <div className="mt-4 px-8 flex items-center justify-between">
           {/* Arrows */}
-          <div className="flex gap-3">
+          <div className="flex gap-3 bg-gray-100 rounded-full p-1">
             <button
               onClick={scrollPrev}
               disabled={prevBtnDisabled}
-              className="p-2 rounded-full bg-white shadow disabled:opacity-30"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-300 shadow disabled:opacity-30"
             >
               <ChevronLeft />
             </button>
@@ -532,7 +559,7 @@ const EmblaCarousel: React.FC = () => {
             <button
               onClick={scrollNext}
               disabled={nextBtnDisabled}
-              className="p-2 rounded-full bg-white shadow disabled:opacity-30"
+              className="p-2 rounded-full bg-gray-100 hover:bg-gray-300 shadow disabled:opacity-30"
             >
               <ChevronRight />
             </button>
