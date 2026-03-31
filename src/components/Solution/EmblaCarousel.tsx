@@ -415,7 +415,7 @@ const EmblaCarousel: React.FC = () => {
 
   return (
     <div className="relative py-12 overflow-x-hidden select-none">
-      <div className="px-20 mx-auto">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-4xl px-6 font-bold mb-6 text-zinc-900 dark:text-white">
           AI-Powered
