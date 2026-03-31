@@ -6,6 +6,7 @@ import ReusableCarousel from "@/components/Solution/EmblaCarousel";
 import JumpLinks from "@/components/Solution/JumpLinks";
 import { useRouter } from "next/navigation";
 import { CardData } from "@/components/Solution/Card";
+import { CardGrid } from "@/components/Solution/CardGrid";
 
 const ServicePage = () => {
   const router = useRouter();
@@ -165,18 +166,10 @@ const ServicePage = () => {
         <JumpLinks links={links} defaultActive="AiPoweredCards" />
       </div>
 
-      {/* Carousel */}
-      <div className="space-y-12">
-        {/* Workplace Section */}
-        <section id="AI-Powered" className="scroll-mt-28">
-          <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
-        </section>
-
-        {/* Workplace Section */}
-        <section id="Specialty" className="scroll-mt-28">
-          <ReusableCarousel cards={SpecialtyCards} title="Specialty" />
-        </section>
-      </div>
+      {/* Card Grid Section */}
+      <section id="CardGrid" className="scroll-mt-28">
+        <CardGrid cards={AiPoweredCards} title="AI-Powered Solutions" />
+      </section>
     </main>
   );
 };
