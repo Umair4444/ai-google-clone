@@ -109,23 +109,23 @@ export default function Navbar() {
 
         {/* ================= Color Dots (RIGHT) ================= */}
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
-          <div
-            className="w-4 h-4 rounded-full bg-[#872b97] shadow-lg shadow-[#872b97]/30 
-                       hover:scale-125 hover:shadow-xl hover:shadow-[#872b97]/50 
-                       transition-all duration-300 ease-out cursor-pointer"
+          <button
+            className="w-4 h-4 rounded-full bg-[#872b97] shadow-lg shadow-[#872b97]/30 hover:scale-125 hover:shadow-xl hover:shadow-[#872b97]/50 transition-all duration-300 ease-out"
             title="AI Models"
+            type="button"
+            aria-label="AI Models"
           />
-          <div
-            className="w-4 h-4 rounded-full bg-[#ff7231] shadow-lg shadow-[#ff7231]/30 
-                       hover:scale-125 hover:shadow-xl hover:shadow-[#ff7231]/50 
-                       transition-all duration-300 ease-out cursor-pointer"
+          <button
+            className="w-4 h-4 rounded-full bg-[#ff7231] shadow-lg shadow-[#ff7231]/30 hover:scale-125 hover:shadow-xl hover:shadow-[#ff7231]/50 transition-all duration-300 ease-out"
             title="Features"
+            type="button"
+            aria-label="Features"
           />
-          <div
-            className="w-4 h-4 rounded-full bg-[#ff3c68] shadow-lg shadow-[#ff3c68]/30 
-                       hover:scale-125 hover:shadow-xl hover:shadow-[#ff3c68]/50 
-                       transition-all duration-300 ease-out cursor-pointer"
+          <button
+            className="w-4 h-4 rounded-full bg-[#ff3c68] shadow-lg shadow-[#ff3c68]/30 hover:scale-125 hover:shadow-xl hover:shadow-[#ff3c68]/50 transition-all duration-300 ease-out"
             title="Settings"
+            type="button"
+            aria-label="Settings"
           />
         </div>
 
