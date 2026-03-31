@@ -181,7 +181,7 @@ const SolutionPage = () => {
       <JumpLinks links={links} defaultActive="Workplace" />
 
       {/* Carousel */}
-      <div className="space-y-8">
+      <div className="space-y-12">
         {/* Workplace Section */}
         <section id="Workplace" className="scroll-mt-24">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
