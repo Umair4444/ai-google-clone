@@ -38,8 +38,9 @@ export const Card: React.FC<CardProps> = ({
             youTubeStarted === card.id ? (
               <iframe
                 ref={(el) => setYouTubeRef(card.id, el)}
-                src={`${card.mediaSrc}?enablejsapi=1&origin=${typeof window !== "undefined" ? window.location.origin : ""}`}
+                src={`${card.mediaSrc}?enablejsapi=1&autoplay=1&mute=0&origin=${typeof window !== "undefined" ? window.location.origin : ""}`}
                 className="w-full h-full pointer-events-auto"
+                allow="autoplay; encrypted-media"
                 allowFullScreen
               />
             ) : (

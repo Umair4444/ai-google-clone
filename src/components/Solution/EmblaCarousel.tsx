@@ -47,7 +47,16 @@ const ReusableCarousel: React.FC<Props> = ({ cards, title = "AI-Powered" }) => {
   };
 
   const setYouTubeRef = (id: number, el: HTMLIFrameElement | null) => {
-    if (el) youtubeRefs.current.set(id, el);
+    if (el) {
+      youtubeRefs.current.set(id, el);
+      // Try to play the video using postMessage API
+      setTimeout(() => {
+        el.contentWindow?.postMessage(
+          JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+          "*",
+        );
+      }, 500);
+    }
   };
 
   const handleVideoClick = async (

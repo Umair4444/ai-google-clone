@@ -74,7 +74,7 @@ const ServicePage = () => {
     {
       id: 5,
       title: "AI Content & Personalization",
-      mediaType: "local-video",
+      mediaType: "youtube",
       mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
@@ -131,7 +131,7 @@ const ServicePage = () => {
     {
       id: 5,
       title: "Performance Marketing",
-      mediaType: "local-video",
+      mediaType: "youtube",
       mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),

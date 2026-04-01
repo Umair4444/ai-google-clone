@@ -25,7 +25,16 @@ export const CardGrid: React.FC<CardGridProps> = ({
 
   const setYouTubeRef = useCallback(
     (id: number, el: HTMLIFrameElement | null) => {
-      if (el) youTubeRefs.current.set(id, el);
+      if (el) {
+        youTubeRefs.current.set(id, el);
+        // Try to play the video using postMessage API
+        setTimeout(() => {
+          el.contentWindow?.postMessage(
+            JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+            "*",
+          );
+        }, 500);
+      }
     },
     [],
   );
