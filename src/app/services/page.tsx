@@ -9,6 +9,7 @@ import { CardData } from "@/components/Solution/Card";
 import { CardGrid } from "@/components/Solution/CardGrid";
 import SolutionGenerator from "@/components/Gemini/SolutionGenerator";
 import FAQAccordion from "@/components/Solution/FAQAccordion";
+import { TestimonialsSection } from "@/components/Solution/TestimonialsSection";
 
 const ServicePage = () => {
   const router = useRouter();
@@ -182,6 +183,8 @@ const ServicePage = () => {
         <GeminiHeader title="Get a direct consultation" />
         <SolutionGenerator />
       </div>
+
+      <TestimonialsSection/>
 
       <FAQAccordion />
     </main>
