@@ -272,8 +272,8 @@ const GetStarted = () => {
         <TopLogoRow />
       </div>
 
-      {/* Mobile view: logo then 2 cards, repeating */}
-      <div className="lg:hidden w-full px-4">
+      {/* Mobile view (sm): logo then 2 cards, repeating - 1 card per row */}
+      <div className="lg:hidden md:hidden w-full px-4">
         {mobilecards.map((card, index) => {
           const logoIndex = Math.floor(index / 2);
           const showMobileLogo =
@@ -290,7 +290,30 @@ const GetStarted = () => {
         })}
       </div>
 
-      {/* Desktop/Tablet view: grid layout */}
+      {/* Tablet view (md): logo then 2 cards per row */}
+      <div className="hidden md:grid md:grid-cols-2 lg:hidden gap-6 px-4">
+        {mobilecards.map((card, index) => {
+          const logoIndex = Math.floor(index / 2);
+          const showLogo = index % 2 === 0 && logoIndex < mobileLogos.length;
+
+          return (
+            <React.Fragment key={index}>
+              {showLogo && (
+                <div className="col-span-2 flex justify-center py-4">
+                  <img
+                    src={mobileLogos[logoIndex].src}
+                    alt={mobileLogos[logoIndex].alt}
+                    className="h-14 object-contain transition duration-300 hover:scale-110"
+                  />
+                </div>
+              )}
+              <PromoCard {...card} />
+            </React.Fragment>
+          );
+        })}
+      </div>
+
+      {/* Desktop view (lg+): 3 cards per row */}
       <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-12 px-4">
         {desktopcards.map((card, index) => {
           const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
