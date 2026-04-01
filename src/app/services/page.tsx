@@ -35,6 +35,9 @@ const ServicePage = () => {
   const links = [
     { id: "AI-Powered", label: "AI-Powered" },
     { id: "Specialty", label: "Specialty" },
+    { id: "Chatbot", label: "Chatbot" },
+    { id: "Testimonials", label: "Testimonials" },
+    { id: "FAQs", label: "FAQs" },
   ];
 
   const AiPoweredCards: CardData[] = [
@@ -163,30 +166,34 @@ const ServicePage = () => {
       {/* Jump Links */}
       <div
         className={`sticky z-40 transition-all duration-300 ease-in-out ${
-          navVisible ? "top-12" : "-top-4"
+          navVisible ? "top-16" : "top-0"
         }`}
       >
         <JumpLinks links={links} defaultActive="AI-Powered" />
       </div>
 
       {/* Card Grid Section */}
-      <section id="AI-Powered" className="scroll-mt-28">
+      <section id="AI-Powered" className="scroll-mt-32 pt-8">
         <CardGrid cards={AiPoweredCards} title="AI-Powered" />
       </section>
 
       {/* Card Grid Section */}
-      <section id="Specialty" className="scroll-mt-28">
+      <section id="Specialty" className="scroll-mt-32 pt-8">
         <CardGrid cards={SpecialtyCards} title="Specialty" />
       </section>
 
-      <div className="py-8 sm:py-10 lg:py-12">
+      <section id="Chatbot" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
         <GeminiHeader title="Get a direct consultation" />
         <SolutionGenerator />
-      </div>
+      </section>
 
-      <TestimonialsSection/>
+      <section id="Testimonials" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
+        <TestimonialsSection />
+      </section>
 
-      <FAQAccordion />
+      <section id="FAQs" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
+        <FAQAccordion />
+      </section>
     </main>
   );
 };

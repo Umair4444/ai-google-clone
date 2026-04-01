@@ -198,7 +198,7 @@ const SolutionPage = () => {
       {/* Jump Links */}
       <div
         className={`sticky z-40 transition-all duration-300 ease-in-out ${
-          navVisible ? "top-12" : "-top-4"
+          navVisible ? "top-16" : "top-0"
         }`}
       >
         <JumpLinks links={links} defaultActive="Workplace" />

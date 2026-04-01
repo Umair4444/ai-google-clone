@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type LinkItem = {
   id: string;
   label: string;
+  icon?: React.ReactNode;
 };
 
 type JumpLinksProps = {
@@ -12,6 +13,7 @@ type JumpLinksProps = {
   defaultActive?: string;
   onChange?: (id: string) => void;
   className?: string;
+  variant?: "default" | "pill" | "underline";
 };
 
 export default function JumpLinks({
@@ -19,6 +21,7 @@ export default function JumpLinks({
   defaultActive,
   onChange,
   className = "",
+  variant = "pill",
 }: JumpLinksProps) {
   const [active, setActive] = useState(defaultActive || links[0]?.id);
 
@@ -41,10 +44,59 @@ export default function JumpLinks({
     }
   };
 
+  // Scroll spy to update active link based on visible section
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200; // Offset for navbar and jumpLinks
+
+      for (const link of links) {
+        const el = document.getElementById(link.id);
+        if (el) {
+          const { offsetTop, offsetHeight } = el;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActive(link.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [links]);
+
+  const getButtonStyles = (isActive: boolean) => {
+    const baseStyles =
+      "relative px-6 py-3 rounded-full text-base sm:text-lg font-medium transition-all duration-200 whitespace-nowrap";
+
+    if (variant === "pill") {
+      return `${baseStyles} ${
+        isActive
+          ? "bg-primary text-primary-foreground shadow-md"
+          : "text-muted-foreground bg-muted/40 hover:bg-muted/50 hover:text-foreground "
+      }`;
+    }
+
+    if (variant === "underline") {
+      return `${baseStyles} rounded-none bg-transparent py-2 ${
+        isActive
+          ? "text-foreground"
+          : "text-muted-foreground hover:text-foreground"
+      } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-200 ${
+        isActive ? "after:scale-x-100" : "after:scale-x-0"
+      }`;
+    }
+
+    return baseStyles;
+  };
+
   return (
-    <div className={`py-8 w-full ${className}`}>
+    <div className={`py-4 w-full ${className}`}>
       <div className="w-fit mx-auto overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-        <ul className="flex flex-nowrap gap-1 bg-gray-100 px-1 py-1 rounded-full mx-auto w-max min-w-full">
+        <ul className="flex flex-nowrap gap-2 bg-muted/50 px-2 py-2 rounded-full mx-auto w-max min-w-full backdrop-blur-sm">
           {links.map((link) => {
             const isActive = active === link.id;
 
@@ -53,15 +105,12 @@ export default function JumpLinks({
                 <button
                   onClick={() => handleClick(link.id)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`px-6 py-3 rounded-full text-base sm:text-lg font-medium transition-all duration-200 whitespace-nowrap
-                    ${
-                      isActive
-                        ? "bg-black text-white shadow-md"
-                        : "text-gray-700 hover:bg-gray-200"
-                    }
-                  `}
+                  className={getButtonStyles(isActive)}
                 >
-                  {link.label}
+                  <span className="flex items-center gap-2">
+                    {link.icon}
+                    {link.label}
+                  </span>
                 </button>
               </li>
             );
