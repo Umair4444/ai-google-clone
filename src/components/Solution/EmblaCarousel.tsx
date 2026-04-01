@@ -64,13 +64,20 @@ const ReusableCarousel: React.FC<Props> = ({ cards, title = "AI-Powered" }) => {
     type: "youtube" | "local-video",
   ) => {
     if (type === "youtube") {
+      // Stop any playing local video
+      videoRefs.current.forEach((v) => v.pause());
+      setPlayingVideo(null);
       setYouTubeStarted(id);
-      setPlayingVideo(id);
     } else {
+      // Clear YouTube state when playing local video
+      setYouTubeStarted(null);
       if (playingVideo === id) {
         videoRefs.current.get(id)?.pause();
         setPlayingVideo(null);
       } else {
+        videoRefs.current.forEach((v, key) => {
+          if (key !== id) v.pause();
+        });
         videoRefs.current.get(id)?.play();
         setPlayingVideo(id);
       }

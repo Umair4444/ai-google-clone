@@ -42,9 +42,13 @@ export const CardGrid: React.FC<CardGridProps> = ({
   const handleVideoClick = useCallback(
     (id: number, type: "youtube" | "local-video") => {
       if (type === "youtube") {
-        setYouTubeStarted(id);
+        // Stop any playing local video
+        videoRefs.current.forEach((v) => v.pause());
         setPlayingVideo(null);
+        setYouTubeStarted(id);
       } else {
+        // Clear YouTube state when playing local video
+        setYouTubeStarted(null);
         const video = videoRefs.current.get(id);
         if (playingVideo === id) {
           video?.pause();

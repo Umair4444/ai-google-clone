@@ -54,7 +54,7 @@ export const Card: React.FC<CardProps> = ({
                     e.stopPropagation();
                     handleVideoClick(card.id, "youtube");
                   }}
-                  className="absolute bottom-4 right-4 bg-white/20 rounded-full p-4"
+                  className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-4 shadow-lg hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
                 >
                   <Play className="w-4 h-4 text-white fill-white" />
                 </button>
@@ -73,7 +73,6 @@ export const Card: React.FC<CardProps> = ({
                 poster={card.poster}
                 className="w-full h-full object-cover pointer-events-none"
                 loop
-                muted
                 playsInline
               />
               <button
@@ -81,7 +80,7 @@ export const Card: React.FC<CardProps> = ({
                   e.stopPropagation();
                   handleVideoClick(card.id, "local-video");
                 }}
-                className="absolute bottom-4 right-4 bg-white/20 rounded-full p-4"
+                className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-4 shadow-lg hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-300 ease-out"
               >
                 {playingVideo === card.id ? (
                   <Pause className="w-4 h-4 text-white" />
