@@ -10,6 +10,8 @@ const navItems = [
     label: "Workplace",
     href: "#",
     dropdown: [
+      { title: "Services", description: "Explore our services", href: "/services" },
+      { title: "Solution", description: "Our AI solutions", href: "/solution" },
       { title: "Workspace AI", description: "AI for productivity", href: "#" },
       { title: "Docs AI", description: "AI writing assistant", href: "#" },
     ],
