@@ -7,6 +7,7 @@ import JumpLinks from "@/components/Solution/JumpLinks";
 import { useRouter } from "next/navigation";
 import { CardData } from "@/components/Solution/Card";
 import { CardGrid } from "@/components/Solution/CardGrid";
+import SolutionGenerator from "@/components/Gemini/SolutionGenerator";
 
 const ServicePage = () => {
   const router = useRouter();
@@ -163,13 +164,23 @@ const ServicePage = () => {
           navVisible ? "top-12" : "-top-4"
         }`}
       >
-        <JumpLinks links={links} defaultActive="AiPoweredCards" />
+        <JumpLinks links={links} defaultActive="AI-Powered" />
       </div>
 
       {/* Card Grid Section */}
-      <section id="CardGrid" className="scroll-mt-28">
-        <CardGrid cards={AiPoweredCards} title="AI-Powered Solutions" />
+      <section id="AI-Powered" className="scroll-mt-28">
+        <CardGrid cards={AiPoweredCards} title="AI-Powered" />
       </section>
+
+      {/* Card Grid Section */}
+      <section id="Specialty" className="scroll-mt-28">
+        <CardGrid cards={SpecialtyCards} title="Specialty" />
+      </section>
+
+      <div className="py-8 sm:py-10 lg:py-12">
+        <GeminiHeader title="Get a direct consultation" />
+        <SolutionGenerator />
+      </div>
     </main>
   );
 };
