@@ -164,8 +164,18 @@ const TopLogoRow = () => {
   );
 };
 
+const MobileLogo = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="lg:hidden w-full flex justify-center py-4">
+    <img
+      src={src}
+      alt={alt}
+      className="h-12 sm:h-14 object-contain transition duration-300 hover:scale-110"
+    />
+  </div>
+);
+
 const GetStarted = () => {
-  const cards = [
+  const desktopcards = [
     {
       title: "Automation and Everything AI",
       videoSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
@@ -205,18 +215,84 @@ const GetStarted = () => {
     },
   ];
 
+  const mobilecards = [
+    {
+      title: "Specialised Services & All-in-One Expert",
+      imageSrc: "/everything-we-do/Specialised-Services-Expert.png",
+      linkText: "Learn More",
+      link: "/",
+    },
+    {
+      title: "Automation and Everything AI",
+      videoSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      linkText: "Learn More",
+      link: "/",
+    },
+    {
+      title: "The next big thing?",
+      videoSrc: "/everything-we-do/next-big-thing-revised.mp4",
+      linkText: "Coming Soon in Q3 2026",
+      link: "/",
+    },
+    {
+      title: "A new form of entertainment...",
+      videoSrc: "/everything-we-do/new-form-of-entertainment-revised.mp4",
+      linkText: "Coming Soon in Q3 2026",
+      link: "/",
+    },
+    {
+      title: "Something industry-breaking...",
+      videoSrc: "/everything-we-do/something-industry-breaking-revised.mp4",
+      linkText: "Coming Soon in Q3 2026",
+      link: "/",
+    },
+
+    {
+      title: "A New Breathtaking Experience..",
+      imageSrc: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      linkText: "Coming Soon in Q1 2027",
+      link: "/",
+    },
+  ];
+
+  const mobileLogos = [
+    { src: "/logo/workplace.png", alt: "logo" },
+    { src: "/logo/studio.png", alt: "logo" },
+    { src: "/logo/lab.png", alt: "logo" },
+  ];
+
   return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col items-center py-18 xl:py-20">
+    <div className="w-full max-w-7xl mx-auto flex flex-col items-center py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16">
       <h2 className="mb-10 lg:mb-28 text-center text-5xl sm:text-6xl lg:text-7xl font-medium">
         Everything We Do
       </h2>
 
-      {/* ✅ ONE logo row */}
-      <TopLogoRow />
+      {/* Logo row - hidden on mobile, visible on lg+ */}
+      <div className="hidden lg:block">
+        <TopLogoRow />
+      </div>
 
-      {/* Cards */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-12 px-4">
-        {cards.map((card, index) => {
+      {/* Mobile view: logo then 2 cards, repeating */}
+      <div className="lg:hidden w-full px-4">
+        {mobilecards.map((card, index) => {
+          const logoIndex = Math.floor(index / 2);
+          const showMobileLogo =
+            index % 2 === 0 && logoIndex < mobileLogos.length;
+
+          return (
+            <React.Fragment key={index}>
+              {showMobileLogo && <MobileLogo {...mobileLogos[logoIndex]} />}
+              <div className="mb-6">
+                <PromoCard {...card} />
+              </div>
+            </React.Fragment>
+          );
+        })}
+      </div>
+
+      {/* Desktop/Tablet view: grid layout */}
+      <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-12 px-4">
+        {desktopcards.map((card, index) => {
           const offsetClass = index % 3 === 1 ? "lg:-translate-y-16" : "";
 
           return (
