@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import ReusableCarousel from "@/components/Solution/EmblaCarousel";
 import JumpLinks from "@/components/Solution/JumpLinks";
 import { useRouter } from "next/navigation";
 import { CardData } from "@/components/Solution/Card";
