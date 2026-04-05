@@ -1,5 +1,6 @@
 "use client";
 
+import FeatureGroup, { CardItem } from "@/components/Sections/FeatureGroup";
 import GeminiHeader from "@/components/Shared/GeminiHeader";
 import JumpLinks from "@/components/Shared/JumpLinks";
 import TextBlock from "@/components/Shared/TextBlock";
@@ -13,6 +14,67 @@ const links = [
   { id: "world-without-walls", label: "World Without Walls" },
   { id: "noble-non-profit-missions", label: "Noble Non-Profit Missions" },
   { id: "innovation-leadership", label: "Innovation Leadership" },
+];
+
+export const EnterpriseAIAdoptionCards: CardItem[] = [
+  {
+    title: "Monk Skin Tone",
+    description:
+      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
+    mediaType: "image",
+    mediaSrc:
+      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
+    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+  },
+  {
+    title: "Language Inclusion",
+    description:
+      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
+    mediaType: "video",
+    mediaSrc:
+      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
+    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+  },
+];
+export const InternetofAgentsCards: CardItem[] = [
+  {
+    title: "Monk Skin Tone",
+    description:
+      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
+    mediaType: "image",
+    mediaSrc:
+      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
+    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+  },
+  {
+    title: "Language Inclusion",
+    description:
+      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
+    mediaType: "video",
+    mediaSrc:
+      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
+    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+  },
+];
+export const WorldWithoutWallsCards: CardItem[] = [
+  {
+    title: "Monk Skin Tone",
+    description:
+      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
+    mediaType: "image",
+    mediaSrc:
+      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
+    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+  },
+  {
+    title: "Language Inclusion",
+    description:
+      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
+    mediaType: "video",
+    mediaSrc:
+      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
+    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+  },
 ];
 
 const AboutPage = () => {
@@ -63,6 +125,33 @@ const AboutPage = () => {
         title="As AI redefines what’s possible, it also creates new ways to be helpful. Helping solve society’s challenges has always been core to our work."
         description="AI can be applied in ways that benefit humanity. Our mission is to demonstrate AI’s societal benefit by enabling real-world value, with projects spanning work in accessibility, science, education, economic impact, and society. We believe that the best way to drive positive change in underserved communities is by partnering with change-makers and the organizations they serve."
       />
+
+      {/* EnterpriseAIAdoption Feature Group */}
+      <section id="enterprise-ai-adoption" className="scroll-mt-32">
+        <FeatureGroup
+          title="Our Commitment to Inclusion"
+          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+          items={EnterpriseAIAdoptionCards}
+        />
+      </section>
+
+      {/* InternetofAgentsCards Feature Group */}
+      <section id="internet-of-agents" className="scroll-mt-32">
+        <FeatureGroup
+          title="Our Commitment to Inclusion"
+          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+          items={InternetofAgentsCards}
+        />
+      </section>
+
+      {/* WorldWithoutWalls Feature Group */}
+      <section id="world-without-walls" className="scroll-mt-32">
+        <FeatureGroup
+          title="Our Commitment to Inclusion"
+          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+          items={WorldWithoutWallsCards}
+        />
+      </section>
     </main>
   );
 };

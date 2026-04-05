@@ -9,10 +9,10 @@ export default function TextBlock({
   title,
   description,
   align = "left",
-  maxWidth = "max-w-7xl",
+  maxWidth = "",
 }: SectionHeaderProps) {
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
+    <section className="w-full px-4 md:px-8 lg:px-16 py-4 lg:py-8">
       <div className={`mx-auto ${maxWidth}`}>
         {/* Wrapper */}
         <div
