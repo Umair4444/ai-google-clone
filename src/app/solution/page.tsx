@@ -38,18 +38,16 @@ const SolutionPage = () => {
     {
       id: 1,
       title: "AI Marketing Automation",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-ai/AI-Marketing-Automation.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 2,
       title: "AI Creator & Media Systems",
-      mediaType: "youtube",
-      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-ai/AI-Creator-Media-Systems.webp",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
@@ -57,35 +55,31 @@ const SolutionPage = () => {
       id: 3,
       title: "AI Customer Experience",
       mediaType: "image",
-      mediaSrc:
-        "https://lh3.googleusercontent.com/qOGRL1iErYg6PCYkYuE25PaJrapNG6fG1jhLAdhhIB5a6fvQ3a7NHTBGwsTzxSF9XboSQZgA3_l-jbEZrzOrsWRfvmCrNO-waY5tjtOIBBNAEDgxEw=w1440-h1080-n-nu",
+      mediaSrc: "/solution-page-ai/AI-Customer-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 4,
       title: "AI Sales & Lead",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-ai/AI-Sales-Lead Gen.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 5,
       title: "AI Content & Personalization",
-      mediaType: "youtube",
-      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-ai/AI-Content-Personalization.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 6,
       title: "AI Data & Intelligence",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-ai/AI-Data-Intelligence.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
@@ -95,18 +89,16 @@ const SolutionPage = () => {
     {
       id: 1,
       title: "Digital Marketing",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-specialty/Digital-Marketing.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 2,
       title: "Content & Creative",
-      mediaType: "youtube",
-      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-specialty/Content-Creative.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
@@ -114,35 +106,31 @@ const SolutionPage = () => {
       id: 3,
       title: "Events & Experiential",
       mediaType: "image",
-      mediaSrc:
-        "https://lh3.googleusercontent.com/qOGRL1iErYg6PCYkYuE25PaJrapNG6fG1jhLAdhhIB5a6fvQ3a7NHTBGwsTzxSF9XboSQZgA3_l-jbEZrzOrsWRfvmCrNO-waY5tjtOIBBNAEDgxEw=w1440-h1080-n-nu",
+      mediaSrc: "/solution-page-specialty/Events-Experiential.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 4,
       title: "Web & Technical",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-specialty/Web-Technical.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 5,
       title: "Performance Marketing",
-      mediaType: "youtube",
-      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-specialty/Performance-Marketing.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
     {
       id: 6,
       title: "CRM & Lifecycle Marketing",
-      mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaType: "image",
+      mediaSrc: "/solution-page-specialty/CRM-Lifecycle-Marketing.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
     },
@@ -153,8 +141,8 @@ const SolutionPage = () => {
       id: 1,
       title: "The next big thing?",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaSrc: "/studio-and-lab/next-big-thing-landscape.mp4",
+      poster: "/studio-and-lab/",
       onClick: () => router.push("/"),
       linkText: "Details in Q3 2026",
     },
@@ -162,8 +150,7 @@ const SolutionPage = () => {
       id: 2,
       title: "A new form of entertainment...",
       mediaType: "youtube",
-      mediaSrc: "https://www.youtube.com/embed/8k8gzfaLDg4",
-      poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
+      mediaSrc: "/studio-and-lab/new-form-of-entertainment-landscape.mp4",
       onClick: () => router.push("/"),
       linkText: "Details in Q3 2026",
     },
@@ -174,7 +161,7 @@ const SolutionPage = () => {
       id: 1,
       title: "Something industry-breaking...",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Coming Soon in Q3 2026",
@@ -193,7 +180,15 @@ const SolutionPage = () => {
   return (
     <main>
       {/* Header */}
-      <GeminiHeader title="Explore our services and solutions" />
+      <GeminiHeader
+        title={
+          <>
+            Explore our AI optimisation{" "}
+            <span className="block"> Solutions and innovation</span>
+          </>
+        }
+        description="Bhobbi combines AI optimisation with creative innovation across three core pillars — Bhobbi Workplace, Bhobbi Studio, and Bhobbi Lab. From AI-powered systems in marketing, sales, and customer experience to digital, events, and technical services, Bhobbi Workplace help businesses scale efficiently. Bhobbi Studio produces original films and music, while Bhobbi Lab builds future-ready apps and explores emerging technologies like virtual worlds. Together, these solutions form an integrated ecosystem designed to help brands adapt, innovate, and lead in an AI-driven world."
+      />
 
       {/* Jump Links */}
       <div
@@ -215,8 +210,11 @@ const SolutionPage = () => {
               className=" w-68 sm:w-72 lg:w-76 mb-2"
             />
           </div>
-          <ReusableCarousel cards={AiPoweredCards} title="AI-Powered" />
-          <ReusableCarousel cards={SpecialtyCards} title="Specialty" />
+          <ReusableCarousel
+            cards={AiPoweredCards}
+            title="AI-Powered Services"
+          />
+          <ReusableCarousel cards={SpecialtyCards} title="Specialty Services" />
         </section>
 
         {/* Studio Section */}

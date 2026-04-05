@@ -1,18 +1,10 @@
-// const GeminiHeader = () => {
-//   return (
-//     <div className="flex justify-center items-center sm:mt-4 md:mt-4">
-//       <h1 className="flex items-center gap-3 text-center font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-//         What are you looking to automate?
-//       </h1>
-//     </div>
-//   );
-// };
+import { ReactNode } from "react";
 
 // export default GeminiHeader;
 
 type HeaderProps = {
   subtitle?: string;
-  title: string;
+  title: ReactNode;
   Logo?: string;
   description?: string;
   className?: string;
@@ -42,7 +34,7 @@ const GeminiHeader = ({
       )}
 
       <h1
-        className={`font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight sm:leading-snug max-w-4xl ${titleClassName}`}
+        className={`font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl max-w-4xl ${titleClassName}`}
       >
         {title}
       </h1>
@@ -60,7 +52,7 @@ const GeminiHeader = ({
 
       {description && (
         <p
-          className={`max-w-xl lg:max-w-2xl mt-2 lg:mt-4 text-base sm:text-lg g:text-xl text-gray-500 leading-relaxed ${descriptionClassName}`}
+          className={`max-w-3xl lg:max-w-4xl mt-2 lg:mt-4 text-base sm:text-lg g:text-xl text-gray-500 leading-relaxed ${descriptionClassName}`}
         >
           {description}
         </p>

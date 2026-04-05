@@ -136,7 +136,7 @@ const ReusableCarousel: React.FC<Props> = ({ cards, title = "AI-Powered" }) => {
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
               className={`h-2 rounded-full ${
-                currentIndex === i ? "bg-blue-600 w-6" : "bg-zinc-300 w-2"
+                currentIndex === i ? "bg-black w-6" : "bg-zinc-300 w-2"
               }`}
             />
           ))}

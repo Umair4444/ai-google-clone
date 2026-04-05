@@ -178,7 +178,7 @@ const GetStarted = () => {
   const desktopcards = [
     {
       title: "Automation and Everything AI",
-      videoSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      videoSrc: "/everything-we-do/ai-and-everything.mp4",
       linkText: "Learn More",
       link: "/",
     },
@@ -224,7 +224,7 @@ const GetStarted = () => {
     },
     {
       title: "Automation and Everything AI",
-      videoSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      videoSrc: "/everything-we-do/ai-and-everything.mp4",
       linkText: "Learn More",
       link: "/",
     },

@@ -97,10 +97,9 @@ export const Card: React.FC<CardProps> = ({
           <h3 className="font-semibold text-base lg:text-lg line-clamp-3">
             {card.title}
           </h3>
-
           <button
             onClick={card.onClick}
-            className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors cursor-pointer"
+            className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors cursor-pointer"
           >
             {card.linkText}
             <ChevronRight className="w-4 h-4" />

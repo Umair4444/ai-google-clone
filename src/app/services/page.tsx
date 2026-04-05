@@ -44,7 +44,7 @@ const ServicePage = () => {
       id: 1,
       title: "AI Marketing Automation",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -71,7 +71,7 @@ const ServicePage = () => {
       id: 4,
       title: "AI Sales & Lead",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -89,7 +89,7 @@ const ServicePage = () => {
       id: 6,
       title: "AI Data & Intelligence",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -101,7 +101,7 @@ const ServicePage = () => {
       id: 1,
       title: "Digital Marketing",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -128,7 +128,7 @@ const ServicePage = () => {
       id: 4,
       title: "Web & Technical",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -146,7 +146,7 @@ const ServicePage = () => {
       id: 6,
       title: "CRM & Lifecycle Marketing",
       mediaType: "local-video",
-      mediaSrc: "/everything-we-do/ai-and-everything-ai‑revised.mp4",
+      mediaSrc: "/everything-we-do/ai-and-everything.mp4",
       poster: "/everything-we-do/A-New-Breathtaking-Experience.png",
       onClick: () => router.push("/"),
       linkText: "Learn More",
@@ -186,7 +186,10 @@ const ServicePage = () => {
         <SolutionGenerator />
       </section>
 
-      <section id="Testimonials" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
+      <section
+        id="Testimonials"
+        className="scroll-mt-32 py-8 sm:py-10 lg:py-12"
+      >
         <TestimonialsSection />
       </section>
 
