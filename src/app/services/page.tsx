@@ -205,7 +205,7 @@ const ServicePage = () => {
         <TestimonialsSection />
       </section>
 
-      <section id="FAQs" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
+      <section id="FAQs" className="scroll-mt-32">
         <FAQAccordion />
       </section>
     </main>
