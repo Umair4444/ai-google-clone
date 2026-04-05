@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-// export default GeminiHeader;
-
 type HeaderProps = {
   subtitle?: string;
   title: ReactNode;
