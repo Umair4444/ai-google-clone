@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  ReactNode,
+} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardData } from "@/components/Solution/Card";
@@ -9,9 +15,10 @@ import { Card, CardData } from "@/components/Solution/Card";
 interface Props {
   cards: CardData[];
   title?: string;
+  description?: ReactNode;
 }
 
-const ReusableCarousel: React.FC<Props> = ({ cards, title = "AI-Powered" }) => {
+const ReusableCarousel: React.FC<Props> = ({ cards, title, description }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true });
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -87,6 +94,11 @@ const ReusableCarousel: React.FC<Props> = ({ cards, title = "AI-Powered" }) => {
   return (
     <div className="relative py-2 sm:py-4 lg:py-6 overflow-hidden mx-auto px-4 sm:px-6 lg:px-16 xl:px-20">
       <h2 className="text-4xl font-bold px-6">{title}</h2>
+      {description && (
+        <div className="text-base lg:text-lg text-muted-foreground px-6 mt-2 mb-6">
+          {description}
+        </div>
+      )}
 
       <div
         className="overflow-hidden py-8 cursor-grab active:cursor-grabbing"

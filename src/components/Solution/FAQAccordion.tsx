@@ -10,57 +10,77 @@ type FAQItem = {
 
 const faqData: FAQItem[] = [
   {
-    question: "Why are AI skills important?",
+    question: "How is Bhobbi Workplace different from a typical agency?",
+    answer: (
+      <p>
+        Unlike traditional agencies that rely heavily on manual work, we build
+        AI-driven systems that continuously optimise and automate your
+        operations—delivering faster, more scalable results.
+      </p>
+    ),
+  },
+  {
+    question:
+      "Is Bhobbi Workplace suitable for SMEs or only large enterprises?",
+    answer: (
+      <p>
+        Our solutions are scalable and designed for both SMEs and large
+        enterprises—any business looking to improve efficiency and drive growth
+        can benefit.
+      </p>
+    ),
+  },
+  {
+    question: "Do you offer customised solutions?",
+    answer: (
+      <p>
+        Yes. Every business is different, so we tailor our systems and services
+        to your specific goals, industry, and challenges. Use our agent-assist
+        bot to find out more or contact us directly via email.
+      </p>
+    ),
+  },
+  {
+    question: "Do you work with us on ROI or specific business objectives?",
+    answer: (
+      <p>
+        Yes, we align our solutions to your business goals and, where relevant,
+        work towards measurable outcomes like ROI. This is typically structured
+        on a case-by-case basis depending on the scope, services, and project
+        requirements.
+      </p>
+    ),
+  },
+  {
+    question: "Do you guarantee results or ROI?",
+    answer: (
+      <p>
+        We focus on delivering measurable impact aligned to your objectives,
+        including ROI where applicable. Specific performance commitments are
+        evaluated on a case-by-case basis depending on the project scope.
+      </p>
+    ),
+  },
+  {
+    question: "Do you offer Marketer-as-a-Service?",
     answer: (
       <>
         <p>
-          Artificial intelligence (AI) is reshaping how we work. Learning AI
-          skills helps future-proof your career, boosts productivity, and opens
-          new opportunities.
+          Yes, we provide flexible Marketer-as-a-Service support tailored to
+          your needs.
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          85% of learners say AI learning helps build expertise and stay ahead
-          of competition.
-        </p>
+        <p className="mt-2">You can choose between:</p>
+        <ul className="list-disc pl-5 mt-2 space-y-1 text-sm text-muted-foreground">
+          <li>
+            <strong>Marketing Generalist</strong> (under 5 years of experience)
+            for execution and day-to-day support
+          </li>
+          <li>
+            <strong>Marketing Expert</strong> (5+ years of experience) for
+            strategic direction and leadership
+          </li>
+        </ul>
       </>
-    ),
-  },
-  {
-    question:
-      "How do I know which Google AI course or credential is right for me?",
-    answer: (
-      <p>
-        Start with beginner resources like AI Essentials if you're new. Then
-        move to specialized certifications based on your career goals.
-      </p>
-    ),
-  },
-  {
-    question:
-      "What is the difference between a certificate and a certification?",
-    answer: (
-      <p>
-        Certificates focus on practical skills and are shorter. Certifications
-        validate deeper expertise and usually require exams.
-      </p>
-    ),
-  },
-  {
-    question: "Where can I learn more about Google’s AI learning resources?",
-    answer: (
-      <p>
-        Explore Google Skills and Grow with Google for courses, learning paths,
-        and AI tools to boost your career.
-      </p>
-    ),
-  },
-  {
-    question: "Do Google Cloud AI learning resources cost money?",
-    answer: (
-      <p>
-        Some resources are free, while others are paid. Google also offers free
-        credits and subscriptions for deeper learning.
-      </p>
     ),
   },
 ];

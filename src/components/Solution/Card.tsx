@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { ChevronRight, Play, Pause } from "lucide-react";
 
 // -------------------- TYPES --------------------
 export interface CardData {
   id: number;
   title: string;
+  description?: ReactNode;
   mediaType: "image" | "youtube" | "local-video";
   mediaSrc: string;
   poster?: string;
@@ -110,9 +111,17 @@ export const Card: React.FC<CardProps> = ({
 
         {/* Content */}
         <div className="p-6 flex flex-col gap-8 flex-1">
-          <h3 className="font-semibold text-base lg:text-lg line-clamp-3">
-            {card.title}
-          </h3>
+          <div className="flex flex-col gap-2 flex-1">
+            <h3 className="font-semibold text-base lg:text-lg line-clamp-3">
+              {card.title}
+            </h3>
+
+            {card.description && (
+              <p className="text-sm lg:text-base text-muted-foreground line-clamp-3">
+                {card.description}
+              </p>
+            )}
+          </div>
           <button
             onClick={card.onClick}
             className="mt-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors cursor-pointer"

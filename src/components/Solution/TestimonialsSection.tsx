@@ -126,7 +126,7 @@ export function TestimonialsSection() {
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
             See what companies around the world are saying about their
-            experience with our AI platform.
+            experience with our us.
           </p>
         </div>
 

@@ -38,50 +38,58 @@ const SolutionPage = () => {
     {
       id: 1,
       title: "AI Marketing Automation",
+      description:
+        "Scale faster with less effort through always-on automated marketing.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Marketing-Automation.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 2,
       title: "AI Creator & Media Systems",
+      description: "Produce more content, faster and smarter.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Creator-Media-Systems.webp",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 3,
       title: "AI Customer Experience",
+      description:
+        "Deliver seamless, personalised experiences that keep customers coming back.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Customer-Experience.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 4,
       title: "AI Sales & Lead",
+      description: "Convert more leads with less manual work.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Sales-Lead Gen.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 5,
       title: "AI Content & Personalization",
+      description: "Engage every audience with content that feels tailor-made.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Content-Personalization.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 6,
       title: "AI Data & Intelligence",
+      description: "Make smarter decisions with clear, actionable insights.",
       mediaType: "image",
       mediaSrc: "/solution-page-ai/AI-Data-Intelligence.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
   ];
 
@@ -89,50 +97,58 @@ const SolutionPage = () => {
     {
       id: 1,
       title: "Digital Marketing",
+      description: "Grow your brand and reach the right audience effectively.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/Digital-Marketing.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 2,
       title: "Content & Creative",
+      description:
+        "Stand out with content that captures attention and drives action.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/Content-Creative.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 3,
       title: "Events & Experiential",
+      description: "Create meaningful experiences that people remember.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/Events-Experiential.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 4,
       title: "Web & Technical",
+      description: "Build fast, reliable platforms that support your growth.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/Web-Technical.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 5,
       title: "Performance Marketing",
+      description: "Maximise ROI with campaigns that deliver real results.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/Performance-Marketing.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
     {
       id: 6,
       title: "CRM & Lifecycle Marketing",
+      description:
+        "Turn customers into loyal advocates through smarter engagement.",
       mediaType: "image",
       mediaSrc: "/solution-page-specialty/CRM-Lifecycle-Marketing.png",
       onClick: () => router.push("/"),
-      linkText: "Learn More",
+      linkText: "Services Offered",
     },
   ];
 
@@ -209,9 +225,14 @@ const SolutionPage = () => {
           </div>
           <ReusableCarousel
             cards={AiPoweredCards}
-            title="AI-Powered Services"
+            title="Bhobbi Workplace AI-Powered Services"
+            description="Smart AI systems that automate, optimise, and scale your marketing, sales, and customer experience."
           />
-          <ReusableCarousel cards={SpecialtyCards} title="Specialty Services" />
+          <ReusableCarousel
+            cards={SpecialtyCards}
+            title="Bhobbi Workplace Specialty Services"
+            description="End-to-end digital, creative, and technical services designed to drive impactful brand growth."
+          />
         </section>
 
         {/* Studio Section */}
@@ -223,7 +244,11 @@ const SolutionPage = () => {
               className="w-44 sm:w-48 lg:w-52 mb-2"
             />
           </div>
-          <ReusableCarousel cards={StudioCards} title="Coming Soon" />
+          <ReusableCarousel
+            cards={StudioCards}
+            title="Bhobbi Studio"
+            description="Original films and music that shape culture and elevate brand storytelling."
+          />
         </section>
 
         {/* Lab Section */}
@@ -235,7 +260,11 @@ const SolutionPage = () => {
               className="w-24 sm:w-28 lg:w-32 mb-2"
             />
           </div>
-          <ReusableCarousel cards={LabCards} title="Coming Soon" />
+          <ReusableCarousel
+            cards={LabCards}
+            title="Bhobbi Lab"
+            description="Innovating the future through proprietary apps and exploration of emerging technologies."
+          />
         </section>
       </div>
     </main>

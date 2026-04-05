@@ -1,18 +1,20 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, ReactNode } from "react";
 import { Card, type CardData } from "./Card";
 
 // -------------------- TYPES --------------------
 export interface CardGridProps {
   cards: CardData[];
   title?: string;
+  description?: ReactNode;
 }
 
 // -------------------- CARD GRID COMPONENT --------------------
 export const CardGrid: React.FC<CardGridProps> = ({
   cards,
-  title = "Solutions",
+  title,
+  description,
 }) => {
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const [youTubeStarted, setYouTubeStarted] = useState<number | null>(null);
@@ -67,7 +69,15 @@ export const CardGrid: React.FC<CardGridProps> = ({
 
   return (
     <div className="w-full py-2 sm:py-4 lg:py-6 overflow-hidden mx-auto px-4 sm:px-6 lg:px-16 xl:px-20">
-      {title && <h2 className="text-4xl font-bold px-6 mb-8">{title}</h2>}
+      {title && (
+        <h2 className="text-3xl lg:text-4xl font-bold px-6 mb-3">{title}</h2>
+      )}
+      {description && (
+        <p className=" text-base lg:text-lg text-muted-foreground px-6 mb-8">
+          {description}
+        </p>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {cards.map((card) => (
           <Card
