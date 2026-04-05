@@ -1,8 +1,8 @@
 "use client";
 
-import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import JumpLinks from "@/components/Solution/JumpLinks";
-import VideoSection from "@/components/VideoSection";
+import GeminiHeader from "@/components/Shared/GeminiHeader";
+import JumpLinks from "@/components/Shared/JumpLinks";
+import VideoCard from "@/components/Shared/VideoCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -40,7 +40,7 @@ const AboutPage = () => {
       <GeminiHeader title="Making AI work in businesses and an impact to everyday lives" />
 
       {/* Video Section */}
-      <VideoSection
+      <VideoCard
         src="https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/applying-AI-to-help-solve_societys.mp4"
         autoPlay
         loop

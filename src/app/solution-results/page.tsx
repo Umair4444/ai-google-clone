@@ -4,7 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ArrowLeft, Download, Share2, Copy, Check, X } from "lucide-react";
-import LoadingAnimation from "@/components/Gemini/LoadingAnimation";
+import LoadingAnimation from "@/components/Shared/LoadingAnimation";
 
 interface SolutionData {
   title: string;

@@ -1,8 +1,8 @@
-import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import GetStarted from "@/components/Gemini/GetStarted";
-import ExploreBanner from "@/components/Gemini/ExploreBanner";
-import NewsGroupSection from "@/components/Gemini/NewsGroupSection";
-import SolutionGenerator from "@/components/Gemini/SolutionGenerator";
+import GeminiHeader from "@/components/Shared/GeminiHeader";
+import GetStarted from "@/components/Sections/GetStarted";
+import ExploreBanner from "@/components/Sections/ExploreBanner";
+import NewsGroupSection from "@/components/Sections/NewsGroupSection";
+import SolutionGenerator from "@/components/Sections/SolutionGenerator";
 
 const HomePage = () => {
   return (

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Shuffle, Sparkles } from "lucide-react";
 import { useRouter } from "next/navigation";
-import LoadingAnimation from "./LoadingAnimation";
+import LoadingAnimation from "../Shared/LoadingAnimation";
 
 const prompts = [
   "Build a chatbot",
@@ -48,14 +48,22 @@ const SolutionGenerator = () => {
         "Deploy to production",
         "Monitor and optimize",
       ],
-      technologies: ["Vertex AI", "Cloud Run", "BigQuery", "TensorFlow", "Node.js"],
+      technologies: [
+        "Vertex AI",
+        "Cloud Run",
+        "BigQuery",
+        "TensorFlow",
+        "Node.js",
+      ],
       image: "/flow-chart.png",
     };
 
     setIsLoading(false);
 
     // Navigate to results page with data
-    router.push(`/solution-results?data=${encodeURIComponent(JSON.stringify(solutionData))}`);
+    router.push(
+      `/solution-results?data=${encodeURIComponent(JSON.stringify(solutionData))}`,
+    );
   };
 
   const handleSurpriseMe = () => {

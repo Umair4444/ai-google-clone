@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useCallback, ReactNode } from "react";
-import { Card, type CardData } from "./Card";
+import { Card, CardData } from "@/components/Shared/Card";
 
 // -------------------- TYPES --------------------
 export interface CardGridProps {

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import JumpLinks from "@/components/Solution/JumpLinks";
+import GeminiHeader from "@/components/Shared/GeminiHeader";
+import JumpLinks from "@/components/Shared/JumpLinks";
 import { useRouter } from "next/navigation";
-import { CardData } from "@/components/Solution/Card";
-import { CardGrid } from "@/components/Solution/CardGrid";
-import SolutionGenerator from "@/components/Gemini/SolutionGenerator";
-import FAQAccordion from "@/components/Solution/FAQAccordion";
-import { TestimonialsSection } from "@/components/Solution/TestimonialsSection";
+import { CardData } from "@/components/Shared/Card";
+import { CardGrid } from "@/components/Sections/CardGrid";
+import SolutionGenerator from "@/components/Sections/SolutionGenerator";
+import FAQAccordion from "@/components/Sections/FAQAccordion";
+import { TestimonialsSection } from "@/components/Sections/TestimonialsSection";
 
 const ServicePage = () => {
   const router = useRouter();
@@ -199,10 +199,7 @@ const ServicePage = () => {
         <SolutionGenerator />
       </section>
 
-      <section
-        id="Testimonials"
-        className="scroll-mt-32"
-      >
+      <section id="Testimonials" className="scroll-mt-32">
         <TestimonialsSection />
       </section>
 

@@ -13,7 +13,7 @@ type VideoSectionProps = {
   className?: string;
 };
 
-export default function VideoSection({
+export default function VideoCard({
   src,
   poster,
   autoPlay = true,

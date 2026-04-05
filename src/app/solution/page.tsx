@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import GeminiHeader from "@/components/Gemini/GeminiHeader";
-import ReusableCarousel from "@/components/Solution/EmblaCarousel";
-import JumpLinks from "@/components/Solution/JumpLinks";
+import GeminiHeader from "@/components/Shared/GeminiHeader";
+import ReusableCarousel from "@/components/Sections/EmblaCarousel";
+import JumpLinks from "@/components/Shared/JumpLinks";
 import { useRouter } from "next/navigation";
-import { CardData } from "@/components/Solution/Card";
+import { CardData } from "@/components/Shared/Card";
 
 const SolutionPage = () => {
   const router = useRouter();

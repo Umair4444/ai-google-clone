@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import BannerCard from "@/components/Gemini/BannerCard";
-import ModalCard from "@/components/Gemini/ModalCard";
+import BannerCard from "@/components/Shared/BannerCard";
+import ModalCard from "@/components/Shared/ModalCard";
 
 interface BannerCardType {
   title: string;

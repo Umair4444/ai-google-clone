@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Card, CardData } from "@/components/Solution/Card";
+import { Card, CardData } from "@/components/Shared/Card";
 
 // -------------------- CAROUSEL --------------------
 interface Props {
