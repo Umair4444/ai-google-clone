@@ -2,6 +2,7 @@
 
 import GeminiHeader from "@/components/Shared/GeminiHeader";
 import JumpLinks from "@/components/Shared/JumpLinks";
+import TextBlock from "@/components/Shared/TextBlock";
 import VideoCard from "@/components/Shared/VideoCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -56,6 +57,12 @@ const AboutPage = () => {
       >
         <JumpLinks links={links} defaultActive="Enterprise AI-Adoption" />
       </div>
+
+      {/* TextBlock  */}
+      <TextBlock
+        title="As AI redefines what’s possible, it also creates new ways to be helpful. Helping solve society’s challenges has always been core to our work."
+        description="AI can be applied in ways that benefit humanity. Our mission is to demonstrate AI’s societal benefit by enabling real-world value, with projects spanning work in accessibility, science, education, economic impact, and society. We believe that the best way to drive positive change in underserved communities is by partnering with change-makers and the organizations they serve."
+      />
     </main>
   );
 };
