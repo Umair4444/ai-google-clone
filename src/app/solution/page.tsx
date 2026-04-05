@@ -29,9 +29,9 @@ const SolutionPage = () => {
   }, [lastScrollY]);
 
   const links = [
-    { id: "Workplace", label: "Workplace" },
-    { id: "Studio", label: "Studio" },
-    { id: "Lab", label: "Lab" },
+    { id: "workplace", label: "Workplace" },
+    { id: "studio", label: "Studio" },
+    { id: "lab", label: "Lab" },
   ];
 
   const AiPoweredCards: CardData[] = [
@@ -209,13 +209,13 @@ const SolutionPage = () => {
           navVisible ? "top-16" : "top-0"
         }`}
       >
-        <JumpLinks links={links} defaultActive="Workplace" />
+        <JumpLinks links={links} defaultActive="workplace" />
       </div>
 
       {/* Carousel */}
       <div className="space-y-12 py-4 lg:py-8">
         {/* Workplace Section */}
-        <section id="Workplace" className="scroll-mt-28">
+        <section id="workplace" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/workplace.png"
@@ -236,7 +236,7 @@ const SolutionPage = () => {
         </section>
 
         {/* Studio Section */}
-        <section id="Studio" className="scroll-mt-28">
+        <section id="studio" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/studio.png"
@@ -252,7 +252,7 @@ const SolutionPage = () => {
         </section>
 
         {/* Lab Section */}
-        <section id="Lab" className="scroll-mt-28">
+        <section id="lab" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">
             <img
               src="/logo/lab.png"

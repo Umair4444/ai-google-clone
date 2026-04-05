@@ -32,11 +32,11 @@ const ServicePage = () => {
   }, [lastScrollY]);
 
   const links = [
-    { id: "AI-Powered", label: "AI-Powered" },
-    { id: "Specialty", label: "Specialty" },
-    { id: "Agent-Assist", label: "Agent Assist" },
-    { id: "Testimonials", label: "Testimonials" },
-    { id: "FAQs", label: "FAQs" },
+    { id: "ai-powered", label: "AI-Powered" },
+    { id: "specialty", label: "Specialty" },
+    { id: "agent-assist", label: "Agent Assist" },
+    { id: "testimonials", label: "Testimonials" },
+    { id: "faqs", label: "FAQs" },
   ];
 
   const AiPoweredCards: CardData[] = [
@@ -171,12 +171,12 @@ const ServicePage = () => {
           navVisible ? "top-16" : "top-0"
         }`}
       >
-        <JumpLinks links={links} defaultActive="AI-Powered" />
+        <JumpLinks links={links} defaultActive="ai-powered" />
       </div>
 
       <div className="space-y-5 lg:space-y-10">
         {/* Card Grid Section */}
-        <section id="AI-Powered" className="scroll-mt-32">
+        <section id="ai-powered" className="scroll-mt-32">
           <CardGrid
             cards={AiPoweredCards}
             title="Bhobbi Workplace AI-Powered Services"
@@ -185,7 +185,7 @@ const ServicePage = () => {
         </section>
 
         {/* Card Grid Section */}
-        <section id="Specialty" className="scroll-mt-32">
+        <section id="specialty" className="scroll-mt-32">
           <CardGrid
             cards={SpecialtyCards}
             title="Bhobbi Workplace Specialty Services"
@@ -194,16 +194,16 @@ const ServicePage = () => {
         </section>
       </div>
 
-      <section id="Chatbot" className="scroll-mt-32">
+      <section id="agent-assist" className="scroll-mt-32">
         <GeminiHeader title="Get a direct consultation" />
         <SolutionGenerator />
       </section>
 
-      <section id="Testimonials" className="scroll-mt-32">
+      <section id="testimonials" className="scroll-mt-32">
         <TestimonialsSection />
       </section>
 
-      <section id="FAQs" className="scroll-mt-32">
+      <section id="faqs" className="scroll-mt-32">
         <FAQAccordion />
       </section>
     </main>

@@ -8,11 +8,11 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
-  { id: "Workplace", label: "Enterprise AI-Adoption" },
-  { id: "Studio", label: "Internet of Agents" },
-  { id: "Lab", label: "World Without Walls" },
-  { id: "Lab", label: "Noble Non-Profit Missions" },
-  { id: "Lab", label: "Innovation Leadership" },
+  { id: "enterprise-ai-adoption", label: "Enterprise AI-Adoption" },
+  { id: "internet-of-agents", label: "Internet of Agents" },
+  { id: "world-without-walls", label: "World Without Walls" },
+  { id: "noble-non-profit-missions", label: "Noble Non-Profit Missions" },
+  { id: "innovation-leadership", label: "Innovation Leadership" },
 ];
 
 const AboutPage = () => {
@@ -55,7 +55,7 @@ const AboutPage = () => {
           navVisible ? "top-16" : "top-0"
         }`}
       >
-        <JumpLinks links={links} defaultActive="Enterprise AI-Adoption" />
+        <JumpLinks links={links} defaultActive="enterprise-ai-adoption" />
       </div>
 
       {/* TextBlock  */}
