@@ -22,7 +22,9 @@ const GeminiHeader = ({
   descriptionClassName = "",
 }: HeaderProps) => {
   return (
-    <div className={`flex flex-col items-center text-center px-4 ${className}`}>
+    <div
+      className={`flex flex-col items-center text-center px-4 py-6 sm:py-8 lg:py-10 ${className}`}
+    >
       {subtitle && (
         <p
           className={`mb-2 text-sm sm:text-base lg:text-lg font-medium text-gray-600 tracking-wide ${subtitleClassName}`}

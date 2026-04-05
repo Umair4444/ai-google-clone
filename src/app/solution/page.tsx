@@ -205,7 +205,7 @@ const SolutionPage = () => {
 
       {/* Jump Links */}
       <div
-        className={`sticky z-40 transition-all duration-300 ease-in-out ${
+        className={`sticky z-40 transition-all duration-300 ease-in-out  ${
           navVisible ? "top-16" : "top-0"
         }`}
       >
@@ -213,7 +213,7 @@ const SolutionPage = () => {
       </div>
 
       {/* Carousel */}
-      <div className="space-y-12 py-4">
+      <div className="space-y-12 py-4 lg:py-8">
         {/* Workplace Section */}
         <section id="Workplace" className="scroll-mt-28">
           <div className="mx-auto px-10 sm:px-12 lg:px-22 xl:px-26">

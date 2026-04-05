@@ -38,7 +38,7 @@ export default function VideoSection({
   };
 
   return (
-    <div className={`w-full mt-16 px-6 ${className}`}>
+    <div className={`w-full py-4 lg:py-8 px-6  ${className}`}>
       <div className="relative w-full max-w-7xl mx-auto rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
         {/* Video */}
         <video

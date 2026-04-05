@@ -163,7 +163,6 @@ const ServicePage = () => {
         title="Explore our services and solutions in"
         Logo="/logo/workplace.png"
         description="Bhobbi Workplace empowers enterprises to unlock greater value by combining AI-driven systems with strategic execution across marketing, sales, and customer engagement. By automating workflows, enhancing decision-making with data, and delivering personalised experiences at scale, it helps organisations operate more efficiently while accelerating growth. Whether it’s generating demand, improving conversion, or strengthening customer relationships, Bhobbi Workplace enables businesses to do more with less—turning complexity into streamlined, high-impact outcomes."
-        className="py-8"
       />
 
       {/* Jump Links */}
@@ -175,32 +174,34 @@ const ServicePage = () => {
         <JumpLinks links={links} defaultActive="AI-Powered" />
       </div>
 
-      {/* Card Grid Section */}
-      <section id="AI-Powered" className="scroll-mt-32 pt-8">
-        <CardGrid
-          cards={AiPoweredCards}
-          title="Bhobbi Workplace AI-Powered Services"
-          description="Smart AI systems that automate, optimise, and scale your marketing, sales, and customer experience."
-        />
-      </section>
+      <div className="space-y-5 lg:space-y-10">
+        {/* Card Grid Section */}
+        <section id="AI-Powered" className="scroll-mt-32">
+          <CardGrid
+            cards={AiPoweredCards}
+            title="Bhobbi Workplace AI-Powered Services"
+            description="Smart AI systems that automate, optimise, and scale your marketing, sales, and customer experience."
+          />
+        </section>
 
-      {/* Card Grid Section */}
-      <section id="Specialty" className="scroll-mt-32 pt-8">
-        <CardGrid
-          cards={SpecialtyCards}
-          title="Bhobbi Workplace Specialty Services"
-          description="End-to-end digital, creative, and technical services designed to drive impactful brand growth."
-        />
-      </section>
+        {/* Card Grid Section */}
+        <section id="Specialty" className="scroll-mt-32">
+          <CardGrid
+            cards={SpecialtyCards}
+            title="Bhobbi Workplace Specialty Services"
+            description="End-to-end digital, creative, and technical services designed to drive impactful brand growth."
+          />
+        </section>
+      </div>
 
-      <section id="Chatbot" className="scroll-mt-32 py-8 sm:py-10 lg:py-12">
+      <section id="Chatbot" className="scroll-mt-32">
         <GeminiHeader title="Get a direct consultation" />
         <SolutionGenerator />
       </section>
 
       <section
         id="Testimonials"
-        className="scroll-mt-32 py-8 sm:py-10 lg:py-12"
+        className="scroll-mt-32"
       >
         <TestimonialsSection />
       </section>

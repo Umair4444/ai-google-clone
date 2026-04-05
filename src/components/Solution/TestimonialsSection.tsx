@@ -118,7 +118,7 @@ function TestimonialCard({
 
 export function TestimonialsSection() {
   return (
-    <section className="w-full mx-auto py-8 sm:py-10 lg:py-12 bg-muted/30">
+    <section className="w-full mx-auto py-8 sm:py-10 lg:py-12 my-4 lg:my-8 bg-muted/30">
       <div className="px-4 sm:px-6 lg:px-16 xl:px-20 mx-auto">
         <div className="mb-12 text-center md:mb-16">
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">

@@ -95,8 +95,8 @@ export default function FAQAccordion() {
   return (
     <section className="w-full mx-auto py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-16 xl:px-20">
       {/* Header */}
-      <div className="mb-6">
-        <h3 className="text-2xl md:text-3xl font-semibold">FAQs</h3>
+      <div className="mb-6 lg:mb-10">
+        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">FAQs</h3>
       </div>
 
       {/* Accordion */}

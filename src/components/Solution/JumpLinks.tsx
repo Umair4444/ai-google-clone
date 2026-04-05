@@ -94,7 +94,7 @@ export default function JumpLinks({
   };
 
   return (
-    <div className={`py-4 w-full ${className}`}>
+    <div className={`py-6 sm:py-8 lg:py-10 w-full ${className}`}>
       <div className="w-fit mx-auto overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
         <ul className="flex flex-nowrap gap-2 bg-muted/50 px-2 py-2 rounded-full mx-auto w-max min-w-full backdrop-blur-sm">
           {links.map((link) => {
