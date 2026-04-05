@@ -36,6 +36,7 @@ export const EnterpriseAIAdoptionCards: CardItem[] = [
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
   },
 ];
+
 export const InternetofAgentsCards: CardItem[] = [
   {
     title: "Monk Skin Tone",
@@ -56,6 +57,7 @@ export const InternetofAgentsCards: CardItem[] = [
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
   },
 ];
+
 export const WorldWithoutWallsCards: CardItem[] = [
   {
     title: "Monk Skin Tone",
@@ -74,6 +76,25 @@ export const WorldWithoutWallsCards: CardItem[] = [
     mediaSrc:
       "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+  },
+];
+
+const economicOpportunityCards: CardItem[] = [
+  {
+    title: "50 states, 50 stories of AI transformation",
+    description:
+      "There are 34 million small businesses in the U.S. Explore these 50 stories from 50 states to inspire creative ways to use AI in Google Workspace.",
+    link: "https://workspace.google.com/ai/customers/?utm_source=ai.google&utm_medium=referral",
+    videoSrc: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+    poster: "https://via.placeholder.com/720x405.png?text=Video+Poster",
+  },
+  {
+    title: "Helping Oklahomans upskill with AI",
+    description:
+      "We’re expanding the Grow with Google initiative in Oklahoma by offering free AI training to over 10,000 residents through the Google AI Essentials course.",
+    link: "https://grow.google/ai-essentials/?utm_source=google&utm_medium=owned&utm_campaign=ai-launch__geo--US&utm_content=owned",
+    imageSrc:
+      "https://lh3.googleusercontent.com/YPKb37vEKWjVFcIf58MoE5BIFQ6eQ6z2pX6dxG2c0-iEZ6VKm-r4EN8fHEhMvWJBf_XePnqcH_Y6JxRUzsIQW3-TP8V9GfAciOR0SCUO4LX9A6p5hbQ=w1440-h810-n-nu",
   },
 ];
 
