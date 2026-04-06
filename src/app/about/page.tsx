@@ -21,81 +21,72 @@ const links = [
 
 export const EnterpriseAIAdoptionCards: CardItem[] = [
   {
-    title: "Monk Skin Tone",
+    title: "Your Integration Roadmap",
     description:
-      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    imageSrc:
-      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
-    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+      "AI should not be an experiment—it should be embedded into how businesses operate. We envision a future where organizations seamlessly integrate AI into their workflows, decision-making, and customer experiences to drive real, measurable outcomes.",
+    imageSrc: "/about-us/Your-Integration-Roadmap.png",
+    link: "/",
   },
   {
-    title: "Language Inclusion",
+    title: "Practical, Scalable Implementation",
     description:
-      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    videoSrc:
-      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
-    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+      "At Bhobbi, we focus on making AI adoption practical and scalable. From strategy to implementation, we help businesses move beyond hype and into meaningful transformation that delivers long-term value.",
+    imageSrc: "/about-us/Practical-Scalable-Implementation.png",
+    link: "/",
   },
 ];
 
 export const InternetofAgentsCards: CardItem[] = [
   {
-    title: "Monk Skin Tone",
+    title: "Autonomous Systems, Working Together",
     description:
-      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    imageSrc:
-      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
-    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+      "The future of technology is not just connected systems, but intelligent agents working together. We see a world where autonomous AI agents collaborate across platforms, executing tasks, making decisions, and continuously optimizing outcomes.",
+    imageSrc: "/about-us/Autonomous-Systems-Working-Together.png",
+    link: "/",
   },
   {
-    title: "Language Inclusion",
+    title: "Orchestrating Intelligent Workflows",
     description:
-      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    videoSrc:
-      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
-    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+      "Bhobbi is building toward this vision—where businesses leverage networks of AI agents to automate processes, enhance productivity, and unlock new possibilities that were previously out of reach.",
+    imageSrc: "/about-us/Orchestrating-Intelligent-Workflows.png",
+    link: "/",
   },
 ];
 
 export const WorldWithoutWallsCards: CardItem[] = [
   {
-    title: "Monk Skin Tone",
+    title: "Breaking Barriers Through Technology",
     description:
-      "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    imageSrc:
-      "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
-    link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
+      "We believe technology should remove barriers, not create them. A world without walls is one where ideas, opportunities, and capabilities flow freely across borders, industries, and systems.",
+    imageSrc: "/about-us/Breaking-Barriers-Through-Technology.png",
+    link: "/",
   },
   {
-    title: "Language Inclusion",
+    title: "Connecting People, Platforms, and Possibilities",
     description:
-      "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    videoSrc:
-      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
-    link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
+      "Through AI and digital innovation, we aim to help businesses operate without limitations—connecting people, platforms, and possibilities in ways that drive inclusivity, accessibility, and global growth.",
+    imageSrc: "/about-us/Connecting-People-Platforms-Possibilities.png",
+    link: "/",
   },
 ];
 
 const NobleNonProfitMissionsCards: CardSectionItem[] = [
   {
-    title: "50 states, 50 stories of AI transformation",
+    title: "Noble Non-Profit Missions",
     description:
-      "There are 34 million small businesses in the U.S. Explore these 50 stories from 50 states to inspire creative ways to use AI in Google Workspace.",
-    link: "https://workspace.google.com/ai/customers/?utm_source=ai.google&utm_medium=referral",
-    videoSrc:
-      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/applying-AI-to-help-solve_societys.mp4",
-    poster: "https://via.placeholder.com/720x405.png?text=Video+Poster",
+      "Progress in AI should uplift every sector of society. We keep non-profit missions firmly in our sights by exploring and shaping new possibilities that empower the less fortunate to be engaged, inspired, and play a deeper impact in this society we live.",
+    imageSrc: "/about-us/Non-Profit-Missions.png",
+    link: "/",
   },
 ];
 
 const InnovationLeadershipCards: CardSectionItem[] = [
   {
-    title: "Helping Oklahomans upskill with AI",
+    title: "Innovation Leadership",
     description:
-      "We’re expanding the Grow with Google initiative in Oklahoma by offering free AI training to over 10,000 residents through the Google AI Essentials course.",
-    link: "https://grow.google/ai-essentials/?utm_source=google&utm_medium=owned&utm_campaign=ai-launch__geo--US&utm_content=owned",
-    imageSrc:
-      "https://lh3.googleusercontent.com/YPKb37vEKWjVFcIf58MoE5BIFQ6eQ6z2pX6dxG2c0-iEZ6VKm-r4EN8fHEhMvWJBf_XePnqcH_Y6JxRUzsIQW3-TP8V9GfAciOR0SCUO4LX9A6p5hbQ=w1440-h810-n-nu",
+      "We believe in leading from the front—continuously exploring, building, and applying emerging technologies. Through innovation, experimentation, and forward-thinking strategies, we strive to shape what’s next and help our partners stay ahead in a rapidly evolving digital landscape.",
+    imageSrc: "/about-us/Innovation-Leadership.png",
+    link: "/",
   },
 ];
 
@@ -146,8 +137,8 @@ const AboutPage = () => {
 
       {/* TextBlock  */}
       <TextBlock
-        title="As AI redefines what’s possible, it also creates new ways to be helpful. Helping solve society’s challenges has always been core to our work."
-        description="AI can be applied in ways that benefit humanity. Our mission is to demonstrate AI’s societal benefit by enabling real-world value, with projects spanning work in accessibility, science, education, economic impact, and society. We believe that the best way to drive positive change in underserved communities is by partnering with change-makers and the organizations they serve."
+        title="We turn the promise of AI into real-world impact for businesses and everyday lives"
+        description="At Bhobbi, we believe AI should do more than exist—it should work. We help businesses turn AI into practical solutions that streamline operations, enhance marketing, and unlock new growth opportunities. By bridging strategy with execution, we make advanced technology accessible and impactful, not just for organizations, but for the people they serve every day."
       />
 
       <div className="py-4 lg:py-8">
@@ -155,7 +146,6 @@ const AboutPage = () => {
         <section id="enterprise-ai-adoption" className="scroll-mt-32">
           <FeatureGroup
             title="Enterprise AI-Adoption"
-            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
             items={EnterpriseAIAdoptionCards}
           />
         </section>
@@ -164,7 +154,6 @@ const AboutPage = () => {
         <section id="internet-of-agents" className="scroll-mt-32">
           <FeatureGroup
             title="Internet of Agents"
-            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
             items={InternetofAgentsCards}
           />
         </section>
@@ -173,7 +162,6 @@ const AboutPage = () => {
         <section id="world-without-walls" className="scroll-mt-32">
           <FeatureGroup
             title="World Without Walls"
-            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
             items={WorldWithoutWallsCards}
           />
         </section>
@@ -184,8 +172,7 @@ const AboutPage = () => {
           <CardSection
             id="noble-non-profit-missions"
             title="Noble Non-Profit Missions"
-            subtitle="Bolstering potential through AI skilling"
-            buttonText="More AI applications for health"
+            buttonText="Enterprise AI-Adoption"
             cards={NobleNonProfitMissionsCards}
           />
         </section>
@@ -194,8 +181,7 @@ const AboutPage = () => {
           <CardSection
             id="innovation-leadership"
             title="Innovation Leadership"
-            subtitle="Bolstering potential through AI skilling"
-            buttonText="More AI applications for health"
+            buttonText="Enterprise AI-Adoption"
             cards={InnovationLeadershipCards}
           />
         </section>
