@@ -91,7 +91,6 @@ const InnovationLeadershipCards: CardSectionItem[] = [
 ];
 
 const AboutPage = () => {
-  const router = useRouter();
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 

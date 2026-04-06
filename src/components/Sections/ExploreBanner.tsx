@@ -257,7 +257,7 @@ const ExploreBanner: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 w-full max-w-7xl mx-auto">
       <h2 className="px-6 text-3xl sm:text-4xl md:text-5xl font-medium mb-10 sm:mb-12">
-        Explore what's possible
+        Explore what&apos;s possible
       </h2>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 px-4">
