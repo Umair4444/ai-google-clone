@@ -3,9 +3,10 @@ import Card from "@/components/Shared/FeatureMedia";
 export type CardItem = {
   title: string;
   description: string;
-  mediaType: "image" | "video";
-  mediaSrc: string;
   link: string;
+  videoSrc?: string;
+  poster?: string;
+  imageSrc?: string;
 };
 
 type Props = {
@@ -24,9 +25,9 @@ export default function FeatureGroup({ title, subtitle, items }: Props) {
         </h3>
 
         {subtitle && (
-          <p className="mt-2 text-sm sm:text-base lg:text-lg  text-gray-500 max-w-xl">
+          <h4 className="mt-2 text-sm sm:text-base lg:text-lg text-gray-500 max-w-xl">
             {subtitle}
-          </p>
+          </h4>
         )}
       </div>
 

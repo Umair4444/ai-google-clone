@@ -3,22 +3,28 @@ import FeatureCard from "@/components/Shared/FeatureCard";
 type Props = {
   title: string;
   description: string;
-  mediaType: "image" | "video";
-  mediaSrc: string;
   link: string;
+  videoSrc?: string;
+  poster?: string;
+  imageSrc?: string;
 };
 
 export default function FeatureMedia({
   title,
   description,
-  mediaType,
-  mediaSrc,
   link,
+  videoSrc,
+  poster,
+  imageSrc,
 }: Props) {
   return (
     <div className="flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
       {/* Media */}
-      <FeatureCard type={mediaType} src={mediaSrc} />
+      <FeatureCard 
+        type={videoSrc ? "video" : "image"} 
+        src={videoSrc || imageSrc || ""} 
+        poster={poster}
+      />
 
       {/* Content */}
       <div className="p-5 flex flex-col gap-3 flex-1">

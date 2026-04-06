@@ -1,5 +1,8 @@
 "use client";
 
+import CardSection, {
+  CardItem as CardSectionItem,
+} from "@/components/Sections/CardSection";
 import FeatureGroup, { CardItem } from "@/components/Sections/FeatureGroup";
 import GeminiHeader from "@/components/Shared/GeminiHeader";
 import JumpLinks from "@/components/Shared/JumpLinks";
@@ -21,8 +24,7 @@ export const EnterpriseAIAdoptionCards: CardItem[] = [
     title: "Monk Skin Tone",
     description:
       "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    mediaType: "image",
-    mediaSrc:
+    imageSrc:
       "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
     link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
   },
@@ -30,8 +32,7 @@ export const EnterpriseAIAdoptionCards: CardItem[] = [
     title: "Language Inclusion",
     description:
       "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    mediaType: "video",
-    mediaSrc:
+    videoSrc:
       "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
   },
@@ -42,8 +43,7 @@ export const InternetofAgentsCards: CardItem[] = [
     title: "Monk Skin Tone",
     description:
       "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    mediaType: "image",
-    mediaSrc:
+    imageSrc:
       "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
     link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
   },
@@ -51,8 +51,7 @@ export const InternetofAgentsCards: CardItem[] = [
     title: "Language Inclusion",
     description:
       "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    mediaType: "video",
-    mediaSrc:
+    videoSrc:
       "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
   },
@@ -63,8 +62,7 @@ export const WorldWithoutWallsCards: CardItem[] = [
     title: "Monk Skin Tone",
     description:
       "In partnership with Harvard professor and sociologist Dr. Ellis Monk, Google released a new skin tone scale designed to be more inclusive of the spectrum of skin tones we see in our society. The Monk Skin Tone Scale will help train AI models for fairness, resulting in features and products that work better for people of all skin tones.",
-    mediaType: "image",
-    mediaSrc:
+    imageSrc:
       "https://lh3.googleusercontent.com/yKCgbrVBJRfmKqv2DNtyJ8drmkeFHekF_NlMVzsGVMHapX0cZ34EWdI0LOwOSK5VuiYfuRNDgytmhJuKT8tHOfq4M-ViiibbVje6WQp6GtExAoDtPg=w1440-h810-n-nu",
     link: "https://blog.google/products/search/monk-skin-tone-scale/?utm_source=ai.google&utm_medium=referral",
   },
@@ -72,22 +70,25 @@ export const WorldWithoutWallsCards: CardItem[] = [
     title: "Language Inclusion",
     description:
       "There are over 7,000 languages spoken around the world. Google built an AI model to help people connect and better understand the world around them, ensuring diverse languages are represented online.",
-    mediaType: "video",
-    mediaSrc:
+    videoSrc:
       "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/SearchTranslate_Hero_FsEthYV.mp4#t=0.1",
     link: "https://blog.google/products/translate/google-translate-new-languages-2024/?utm_source=ai.google&utm_medium=referral",
   },
 ];
 
-const economicOpportunityCards: CardItem[] = [
+const EconomicOpportunityCards: CardSectionItem[] = [
   {
     title: "50 states, 50 stories of AI transformation",
     description:
       "There are 34 million small businesses in the U.S. Explore these 50 stories from 50 states to inspire creative ways to use AI in Google Workspace.",
     link: "https://workspace.google.com/ai/customers/?utm_source=ai.google&utm_medium=referral",
-    videoSrc: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+    videoSrc:
+      "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/applying-AI-to-help-solve_societys.mp4",
     poster: "https://via.placeholder.com/720x405.png?text=Video+Poster",
   },
+];
+
+const HealthcareCards: CardSectionItem[] = [
   {
     title: "Helping Oklahomans upskill with AI",
     description:
@@ -124,13 +125,15 @@ const AboutPage = () => {
       <GeminiHeader title="Making AI work in businesses and an impact to everyday lives" />
 
       {/* Video Section */}
-      <VideoCard
-        src="https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/applying-AI-to-help-solve_societys.mp4"
-        autoPlay
-        loop
-        muted
-        overlay
-      />
+      <section className="px-4 md:px-8 lg:px-16">
+        <VideoCard
+          src="https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/media/applying-AI-to-help-solve_societys.mp4"
+          autoPlay
+          loop
+          muted
+          overlay
+        />
+      </section>
 
       {/* Jump Links */}
       <div
@@ -171,6 +174,26 @@ const AboutPage = () => {
           title="Our Commitment to Inclusion"
           subtitle="We are dedicated to creating AI that serves everyone, everywhere."
           items={WorldWithoutWallsCards}
+        />
+      </section>
+
+      <section id="noble-non-profit-missions" className="scroll-mt-32">
+        <CardSection
+          id="economic-opportunity"
+          title="Economic Opportunity"
+          subtitle="Bolstering potential through AI skilling"
+          buttonText="More AI applications for health"
+          cards={EconomicOpportunityCards}
+        />
+      </section>
+
+      <section id="innovation-leadership" className="scroll-mt-32">
+        <CardSection
+          id="healthcare"
+          title="Healthcare"
+          subtitle="Bolstering potential through AI skilling"
+          buttonText="More AI applications for health"
+          cards={HealthcareCards}
         />
       </section>
     </main>
