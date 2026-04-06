@@ -76,7 +76,7 @@ export const WorldWithoutWallsCards: CardItem[] = [
   },
 ];
 
-const EconomicOpportunityCards: CardSectionItem[] = [
+const NobleNonProfitMissionsCards: CardSectionItem[] = [
   {
     title: "50 states, 50 stories of AI transformation",
     description:
@@ -88,7 +88,7 @@ const EconomicOpportunityCards: CardSectionItem[] = [
   },
 ];
 
-const HealthcareCards: CardSectionItem[] = [
+const InnovationLeadershipCards: CardSectionItem[] = [
   {
     title: "Helping Oklahomans upskill with AI",
     description:
@@ -150,52 +150,56 @@ const AboutPage = () => {
         description="AI can be applied in ways that benefit humanity. Our mission is to demonstrate AI’s societal benefit by enabling real-world value, with projects spanning work in accessibility, science, education, economic impact, and society. We believe that the best way to drive positive change in underserved communities is by partnering with change-makers and the organizations they serve."
       />
 
-      {/* EnterpriseAIAdoption Feature Group */}
-      <section id="enterprise-ai-adoption" className="scroll-mt-32">
-        <FeatureGroup
-          title="Our Commitment to Inclusion"
-          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
-          items={EnterpriseAIAdoptionCards}
-        />
-      </section>
+      <div className="py-4 lg:py-8">
+        {/* EnterpriseAIAdoption Feature Group */}
+        <section id="enterprise-ai-adoption" className="scroll-mt-32">
+          <FeatureGroup
+            title="Enterprise AI-Adoption"
+            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+            items={EnterpriseAIAdoptionCards}
+          />
+        </section>
 
-      {/* InternetofAgentsCards Feature Group */}
-      <section id="internet-of-agents" className="scroll-mt-32">
-        <FeatureGroup
-          title="Our Commitment to Inclusion"
-          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
-          items={InternetofAgentsCards}
-        />
-      </section>
+        {/* InternetofAgentsCards Feature Group */}
+        <section id="internet-of-agents" className="scroll-mt-32">
+          <FeatureGroup
+            title="Internet of Agents"
+            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+            items={InternetofAgentsCards}
+          />
+        </section>
 
-      {/* WorldWithoutWalls Feature Group */}
-      <section id="world-without-walls" className="scroll-mt-32">
-        <FeatureGroup
-          title="Our Commitment to Inclusion"
-          subtitle="We are dedicated to creating AI that serves everyone, everywhere."
-          items={WorldWithoutWallsCards}
-        />
-      </section>
+        {/* WorldWithoutWalls Feature Group */}
+        <section id="world-without-walls" className="scroll-mt-32">
+          <FeatureGroup
+            title="World Without Walls"
+            subtitle="We are dedicated to creating AI that serves everyone, everywhere."
+            items={WorldWithoutWallsCards}
+          />
+        </section>
+      </div>
 
-      <section id="noble-non-profit-missions" className="scroll-mt-32">
-        <CardSection
-          id="economic-opportunity"
-          title="Economic Opportunity"
-          subtitle="Bolstering potential through AI skilling"
-          buttonText="More AI applications for health"
-          cards={EconomicOpportunityCards}
-        />
-      </section>
+      <div className="py-4 lg:py-8">
+        <section id="noble-non-profit-missions" className="scroll-mt-32">
+          <CardSection
+            id="noble-non-profit-missions"
+            title="Noble Non-Profit Missions"
+            subtitle="Bolstering potential through AI skilling"
+            buttonText="More AI applications for health"
+            cards={NobleNonProfitMissionsCards}
+          />
+        </section>
 
-      <section id="innovation-leadership" className="scroll-mt-32">
-        <CardSection
-          id="healthcare"
-          title="Healthcare"
-          subtitle="Bolstering potential through AI skilling"
-          buttonText="More AI applications for health"
-          cards={HealthcareCards}
-        />
-      </section>
+        <section id="innovation-leadership" className="scroll-mt-32">
+          <CardSection
+            id="innovation-leadership"
+            title="Innovation Leadership"
+            subtitle="Bolstering potential through AI skilling"
+            buttonText="More AI applications for health"
+            cards={InnovationLeadershipCards}
+          />
+        </section>
+      </div>
     </main>
   );
 };
